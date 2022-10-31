@@ -35,14 +35,27 @@ def clip_finder():
     
     string = ""
     chat = ChatDownloader().get_chat(video_id)
+    links = []
+    chats = []
+    images = []
+    names = []
     for message in chat:
         for word in key_word:
             if word in message['message'].lower().split():
                 link = "https://youtu.be/"+video_id+"?t="+str(int(message['time_in_seconds']))
-                string += '</br>' + f"<img src = \"{message['author']['images'][1]['url']}\"> {message['author']['name']} " "<a href=\"" + link + f"\"> "+ "."*100 + f"  {link} - </a> " + message['message']
-                print(message)
+                image_link = message['author']['images'][1]['url']
+                chat = message['message']
+                name = message['author']['name']
+                string += '</br>' + f"<img src = \"{image_link}\"> {name} " "<a href=\"" + link + f"\"> "+ "."*100 + f"  {link} - </a> " + chat
+                names.append(name)
+                chats.append(chat)
+                images.append(image_link)
+                links.append(link)
+                
+
+
     if not string:
         string = "NO DATA FOUND"
-    return string
+    return render_template("app.html", links=links, chats=chats, images=images, names=names)
 
 app.run(debug=False, port=8080,host="0.0.0.0")
