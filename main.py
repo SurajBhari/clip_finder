@@ -17,7 +17,7 @@ def clip_finder():
     if request.method == "GET":
         return render_template("index.html")
 
-        
+
     video_link =  request.form["video_link"]
     key_word =  request.form["keywords"].split(",")
     if not video_link:
@@ -27,11 +27,12 @@ def clip_finder():
     if not key_word:
         return "Please enter Keyword(s) to make this work..."
     
-    
     parsed_link = parse.urlparse(video_link)
     video_id = parse.parse_qs(parsed_link.query)['v'][0]
+    
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
+    
     string = ""
     chat = ChatDownloader().get_chat(video_id)
     for message in chat:
