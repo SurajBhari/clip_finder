@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clip Finder</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type=text/javascript> $(function() { $("#start-button").click(function (event) { $.getJSON('/start', { },
+        function(data) { }); return false; }); }); </script> 
+</head>
+<body>
+    {% block content %}
+    <form action="#" method="post">
+        <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
+        <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
+        <p><input type="submit" value="Sumbit"/></p>
+    </form>
+    {% endblock %}
+    <table>
+        <tr>
+            <td id="output">
+                {{output}}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
