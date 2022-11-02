@@ -1,7 +1,8 @@
 from re import T
 from chat_downloader import ChatDownloader, errors
-import scrapetube
+from youtubesearchpython import Video
 
+import datetime
 from flask import Flask, render_template, request
 
 from flask import Flask, redirect, url_for, render_template, request
@@ -33,13 +34,26 @@ def clip_finder():
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
     
-    #video = scrapetube.get_
     string = ""
-    chat = ChatDownloader().get_chat(video_id)
     links = []
     chats = []
     images = []
     names = []
+    video_data = Video.get(video_id)
+    if not video_data["isLiveContent"]:
+        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
+    title = video_data["title"]
+    duration = int(video_data["duration"]["secondsText"])
+    duration = datetime.timedelta(seconds=duration)
+    duration = str(duration)
+    description = video_data["description"]
+    thumbnail_link = video_data["thumbnails"][-1]["url"]
+    if video_data["isLiveNow"]:
+        return "Please wait till the stream get over to prevent issues."
+    video_direct_link = video_data["streamingData"]["formats"][-1]["url"]
+    video_link = video_data["link"]
+    chat = ChatDownloader().get_chat(video_id)
+
     for message in chat:
         for word in key_word:
             if word in message['message'].lower().split():
@@ -56,7 +70,19 @@ def clip_finder():
 
 
     if not string:
-        string = "NO DATA FOUND"
-    return render_template("index.html", links=links, chats=chats, images=images, names=names)
+        return "No data found"
+    return render_template(
+        "index.html",
+        title=title,
+        duration=duration,
+        description=description,
+        video_link = video_link,
+        thumbnail_link=thumbnail_link,
+        video_direct_link=video_direct_link,
+        links=links, 
+        chats=chats, 
+        images=images, 
+        names=names
+    )
 
 app.run(debug=True)

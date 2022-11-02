@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Clip Finder part2</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <style>
-        body {
+    <head>
+        <meta charset="UTF-8">
+        <title>Clip Finder part2</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <style>
+            body {
             background: radial-gradient(ellipse at bottom, var(#223344) 0%, var(#090a0f) 100%);
             background-image: url('https://picsum.photos/1360/768/?blur=10&nocache=<?php echo time(); ?>'); 
             background-repeat: no-repeat;
@@ -13,33 +13,69 @@
             animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
             animation-fill-mode: forwards;
             position: relative;
-        }
-
-    </style>
-</head>
-<body>
-    {% block content %}
-    <center>
-    <form action="#" method="post">
-        <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
-        <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
-        <p><input type="submit" value="Sumbit"/></p>
-    </form>
-    </center>
-    {% endblock %}
-    <center><table border="0.2" id="table">
-    {% for i in range(images|length) %}
-            <COLGROUP>
-            <COL width="100"><COL width="100">
-            <THEAD>
+            }
+            p {
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}
+        <center>
+            <form action="#" method="post">
+                <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
+                <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
+                <p><input type="submit" value="Sumbit"/></p>
+            </form>
+        </center>
+        {% endblock %}
+        <center>
+        <table border="2" id="info-table">
             <tr>
-                <td><center>{{i+1}}.</center></td>
-                <td><center>{{names[i]}}</center></td>
-                <td><center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center></td>
-                <td><center><a href = {{ links[i] }}> Click here </a></center></td>
-                <td><center><p> {{ chats[i] }} </p></center></td>
+                <td>
+                    <center>
+                        <img src={{ thumbnail_link }} alt="Thumbnail of the video stream"> 
+                    </center>
+                </td>
             </tr>
-    {% endfor %}   
-    </table></center>
-</body>
+            <tr>
+            <td>
+                <center>
+                    <a href={{ video_link }}>
+                        <button>{{ title }}</button>
+                    </a>
+                </center>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <center>
+                <a href={{ video_direct_link }}><button>Download</button></a>
+                </center>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <center>
+                <p id="description">{{ description }}</p>
+            </center>
+            </td>
+            </tr>
+        </table>
+        </center>
+        <table border="2" id="info-table">
+        {% for i in range(images|length) %}
+        <COLGROUP>
+        <COL width="100"><COL width="100">
+        <THEAD>
+        <tr>
+        <td><center>{{i+1}}.</center></td>
+        <td><center>{{names[i]}}</center></td>
+        <td><center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center></td>
+        <td><center><a href = {{ links[i] }}> Click here </a></center></td>
+        <td><center><p> {{ chats[i] }} </p></center></td>
+        </tr>
+        {% endfor %}   
+        </table></center>
+    </body>
 </html>

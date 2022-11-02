@@ -2,3 +2,5 @@ chat-downloader
 selenium
 scrapetube
 flask
+youtube-search-python
+yt-dlp
