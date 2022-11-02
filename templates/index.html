@@ -18,6 +18,13 @@
                 white-space: pre-wrap;
                 font-size: xx-small;
             }
+            .result {
+                {% if result %}
+                visibility: visible;
+                {% else %}
+                visibility: hidden;
+                {% endif %}
+            }
         </style>
     </head>
     <body>
@@ -31,55 +38,66 @@
         </center>
         {% endblock %}
         <center>
-        <table border="2" id="info-table">
-            <tr>
+        <div class="result">
+            <table border="2" id="info-table">
+                <tr>
+                    <td>
+                        <center>
+                            <a href={{ thumbnail_link }}><button>Thumbnail</button></a>
+                        </center>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <center>
+                            <iframe width="854" height="480" src={{ embed_link }} title={{ title }} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+                        </center>
+                    </td>
+                </tr>
+                
+                <tr>
                 <td>
                     <center>
-                        <img src={{ thumbnail_link }} alt="Thumbnail of the video stream"> 
+                        <a href={{ video_link }}>
+                            <button>{{ title }}</button>
+                        </a>
                     </center>
                 </td>
-            </tr>
-            <tr>
-            <td>
+                </tr>
+                <tr>
+                <td>
+                    <center>
+                    <a href={{ video_direct_link }}><button>Download</button></a>
+                    </center>
+                </td>
+                </tr>
+                <tr>
+                <td>
                 <center>
-                    <a href={{ video_link }}>
-                        <button>{{ title }}</button>
-                    </a>
+                    <p id="description">{{ description }}</p>
                 </center>
-            </td>
-            </tr>
-            <tr>
-            <td>
-                <center>
-                <a href={{ video_direct_link }}><button>Download</button></a>
-                </center>
-            </td>
-            </tr>
-            <tr>
-            <td>
-            <center>
-                <p id="description">{{ description }}</p>
+                </td>
+                </tr>
+            </table>
             </center>
-            </td>
+            <center>
+            <table border="2" id="info-table">
+            {% for i in range(images|length) %}
+            <COLGROUP>
+            <COL width="100"><COL width="100">
+            <THEAD>
+            <center>
+            <tr>
+            <td><center>{{i+1}}.</center></td>
+            <td><center>{{names[i]}}</center></td>
+            <td><center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center></td>
+            <td><center><a href = {{ links[i] }}> Click here </a></center></td>
+            <td><center><p> {{ chats[i] }} </p></center></td>
             </tr>
-        </table>
-        </center>
-        <center>
-        <table border="2" id="info-table">
-        {% for i in range(images|length) %}
-        <COLGROUP>
-        <COL width="100"><COL width="100">
-        <THEAD>
-        <center>
-        <tr>
-        <td><center>{{i+1}}.</center></td>
-        <td><center>{{names[i]}}</center></td>
-        <td><center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center></td>
-        <td><center><a href = {{ links[i] }}> Click here </a></center></td>
-        <td><center><p> {{ chats[i] }} </p></center></td>
-        </tr>
-        </center>
-        {% endfor %}   
-        </table></center>
+            </center>
+            {% endfor %}   
+            </table></center>
+        </div>
     </body>
 </html>

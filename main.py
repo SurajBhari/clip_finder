@@ -16,7 +16,7 @@ app = Flask(__name__)
 def clip_finder():
     # take input from a text box id = " input"
     if request.method == "GET":
-        return render_template("index.html")
+        return render_template("index.html", visible=False)
 
 
     video_link =  request.form["video_link"]
@@ -30,7 +30,7 @@ def clip_finder():
     
     parsed_link = parse.urlparse(video_link)
     video_id = parse.parse_qs(parsed_link.query)['v'][0]
-    
+    print(video_id)
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
     
@@ -40,6 +40,8 @@ def clip_finder():
     images = []
     names = []
     video_data = Video.get(video_id)
+    embed_link = "https://www.youtube.com/embed/"+video_id
+
     if not video_data["isLiveContent"]:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
     title = video_data["title"]
@@ -50,10 +52,15 @@ def clip_finder():
     thumbnail_link = video_data["thumbnails"][-1]["url"]
     if video_data["isLiveNow"]:
         return "Please wait till the stream get over to prevent issues."
-    video_direct_link = video_data["streamingData"]["formats"][-1]["url"]
+    try:
+        video_direct_link = video_data["streamingData"]["formats"][-1]["url"]
+    except KeyError:
+        return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     video_link = video_data["link"]
-    chat = ChatDownloader().get_chat(video_id)
-
+    try:
+        chat = ChatDownloader().get_chat(video_id) # get chat
+    except errors.NoChatReplay:
+        return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     for message in chat:
         for word in key_word:
             if word in message['message'].lower().split():
@@ -67,16 +74,16 @@ def clip_finder():
                 images.append(image_link)
                 links.append(link)
                 
-
-
     if not string:
         return "No data found"
     return render_template(
         "index.html",
+        visible = True,
         title=title,
         duration=duration,
         description=description,
         video_link = video_link,
+        embed_link = embed_link,
         thumbnail_link=thumbnail_link,
         video_direct_link=video_direct_link,
         links=links, 
