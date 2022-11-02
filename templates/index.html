@@ -1,103 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Clip Finder part2</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <style>
-            body {
-            background: radial-gradient(ellipse at bottom, var(#223344) 0%, var(#090a0f) 100%);
-            background-image: url('https://picsum.photos/1360/768/?blur=10&nocache=<?php echo time(); ?>'); 
-            background-repeat: no-repeat;
-            background-size: cover;
-            animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
-            animation-fill-mode: forwards;
-            position: relative;
+	<head>
+		<meta charset="UTF-8">
+		<title>Clip Finder part2</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+		<style>
+			body {
+                background: radial-gradient(ellipse at bottom, var(#223344) 0%, var(#090a0f) 100%);
+                background-image: url('https://picsum.photos/1360/768/?blur=10&nocache=<?php echo time(); ?>'); 
+                background-repeat: no-repeat;
+                background-size: cover;
+                animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
+                animation-fill-mode: forwards;
+                position: relative;
             }
-            p {
+			p {
                 white-space: pre-wrap;
                 font-size: xx-small;
-            }
-            .result {
-                {% if result %}
-                visibility: visible;
-                {% else %}
-                visibility: hidden;
-                {% endif %}
-            }
-        </style>
-    </head>
-    <body>
-        {% block content %}
-        <center>
-            <form action="#" method="post">
-                <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
-                <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
-                <p><input type="submit" value="Sumbit"/></p>
-            </form>
-        </center>
-        {% endblock %}
-        <center>
-        <div class="result">
-            <table border="2" id="info-table">
-                <tr>
-                    <td>
-                        <center>
-                            <a href={{ thumbnail_link }}><button>Thumbnail</button></a>
-                        </center>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <center>
-                            <iframe width="854" height="480" src={{ embed_link }} title={{ title }} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
-                        </center>
-                    </td>
-                </tr>
-                
-                <tr>
-                <td>
-                    <center>
-                        <a href={{ video_link }}>
-                            <button>{{ title }}</button>
-                        </a>
-                    </center>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    <center>
-                    <a href={{ video_direct_link }}><button>Download</button></a>
-                    </center>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <center>
-                    <p id="description">{{ description }}</p>
-                </center>
-                </td>
-                </tr>
-            </table>
-            </center>
-            <center>
-            <table border="2" id="info-table">
-            {% for i in range(images|length) %}
-            <COLGROUP>
-            <COL width="100"><COL width="100">
-            <THEAD>
-            <center>
-            <tr>
-            <td><center>{{i+1}}.</center></td>
-            <td><center>{{names[i]}}</center></td>
-            <td><center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center></td>
-            <td><center><a href = {{ links[i] }}> Click here </a></center></td>
-            <td><center><p> {{ chats[i] }} </p></center></td>
-            </tr>
-            </center>
-            {% endfor %}   
-            </table></center>
-        </div>
-    </body>
+			}
+		</style>
+	</head>
+	<body>
+		{% block content %}
+		<center>
+			<form action="#" method="post">
+				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
+				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
+				<p><input type="submit" value="Sumbit"/></p>
+			</form>
+		</center>
+		{% endblock %}
+		<div class="result">
+			<center>
+				<table border="2" id="info-table">
+					<tr>
+						<td>
+							<center>
+								<a href={{ thumbnail_link }}><button>Thumbnail</button></a>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<iframe width="854" height="480" src={{ embed_link }} title={{ title }} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<a href={{ video_link }}>
+								<button>{{ title }}</button>
+								</a>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<a href={{ video_direct_link }}><button>Download</button></a>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<p id="description">{{ description }}</p>
+							</center>
+						</td>
+					</tr>
+				</table>
+			</center>
+			<center>
+			<table border="2" id="chat-table">
+				{% for i in range(images|length) %}
+				<COLGROUP>
+					<COL width="100">
+					<COL width="100">
+				<THEAD>
+					<center>
+						<tr>
+							<td>
+								<center>{{i+1}}.</center>
+							</td>
+							<td>
+								<center>{{names[i]}}</center>
+							</td>
+							<td>
+								<center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center>
+							</td>
+							<td>
+								<center><a href = {{ links[i] }}> Click here </a></center>
+							</td>
+							<td>
+								<center>
+									<p> {{ chats[i] }} </p>
+								</center>
+							</td>
+						</tr>
+					</center>
+					{% endfor %}   
+			</table>
+		</div>
+	</body>
 </html>
