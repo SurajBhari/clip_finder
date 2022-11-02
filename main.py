@@ -33,6 +33,7 @@ def clip_finder():
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
     
+    #video = scrapetube.get_
     string = ""
     chat = ChatDownloader().get_chat(video_id)
     links = []
@@ -56,6 +57,6 @@ def clip_finder():
 
     if not string:
         string = "NO DATA FOUND"
-    return render_template("app.html", links=links, chats=chats, images=images, names=names)
+    return render_template("index.html", links=links, chats=chats, images=images, names=names)
 
-app.run(debug=False, port=8080,host="0.0.0.0")
+app.run(debug=True)
