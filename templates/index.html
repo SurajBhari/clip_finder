@@ -20,14 +20,23 @@
                 white-space: pre-wrap;
                 font-size: xx-small;
 			}
+            .myimg{
+                width:32px;
+                height:32px;
+                object-fit:cover;
+                border-radius:50%;
+              }
 		</style>
 	</head>
 	<body>
 		{% block content %}
 		<center>
 			<form action="#" method="post">
-				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
-				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
+                <h1>Clip Finder</h1>
+                <h2>Enter a YouTube URL to find the exact time a specific word was said in chat</h2>
+				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" width="50%"></p>
+                <h2> Enter Keyword(s) (seperate multiple by commas) </h2>
+				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords" width="50%"></p>
 				<p><input type="submit" value="Sumbit"/></p>
 			</form>
 		</center>
@@ -86,7 +95,7 @@
 								<center>{{names[i]}}</center>
 							</td>
 							<td>
-								<center><img src={{  images[i] }} alt="Sorry, No Display!" border="0"/></center>
+								<center><img src={{  images[i] }} alt="Sorry, No Display!" border="0" class="avatar"/></center>
 							</td>
 							<td>
 								<center><a href = {{ links[i] }}> Click here </a></center>
