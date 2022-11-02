@@ -29,7 +29,10 @@ def clip_finder():
         return "Please enter Keyword(s) to make this work..."
     
     parsed_link = parse.urlparse(video_link)
-    video_id = parse.parse_qs(parsed_link.query)['v'][0]
+    try:
+        video_id = parse.parse_qs(parsed_link.query)['v'][0]
+    except KeyError:
+        return "Please pass a proper youtube video link... like https://www.youtube.com/watch?v=E1YVSxKXidc . Sharing links are not allowed till now."
     print(video_id)
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
