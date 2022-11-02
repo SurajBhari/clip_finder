@@ -16,7 +16,7 @@ app = Flask(__name__)
 def clip_finder():
     # take input from a text box id = " input"
     if request.method == "GET":
-        return render_template("index.html", visible=False)
+        return render_template("index.html")
 
 
     video_link =  request.form["video_link"]
@@ -24,10 +24,10 @@ def clip_finder():
     if not video_link:
         return "Please enter a video link to make this work... like https://www.youtube.com/watch?v=E1YVSxKXidc"
     
-    key_word = [_.lower() for _ in key_word]
+    key_word = [_.lower().strip() for _ in key_word]
     if not key_word:
         return "Please enter Keyword(s) to make this work..."
-    
+    print(key_word)
     parsed_link = parse.urlparse(video_link)
     try:
         video_id = parse.parse_qs(parsed_link.query)['v'][0]
@@ -81,7 +81,6 @@ def clip_finder():
         return "No data found"
     return render_template(
         "index.html",
-        visible = True,
         title=title,
         duration=duration,
         description=description,
@@ -95,4 +94,4 @@ def clip_finder():
         names=names
     )
 
-app.run(debug=True)
+app.run(debug=False, host="0.0.0.0", port=8080)

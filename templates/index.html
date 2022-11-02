@@ -13,6 +13,8 @@
                 animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
                 animation-fill-mode: forwards;
                 position: relative;
+                margin: 0;
+                padding: 0;
             }
 			p {
                 white-space: pre-wrap;
@@ -32,7 +34,7 @@
 		{% endblock %}
 		<div class="result">
 			<center>
-				<table border="2" id="info-table">
+				<table border="2" id="info-table", width="100%">
 					<tr>
 						<td>
 							<center>
@@ -73,14 +75,10 @@
 				</table>
 			</center>
 			<center>
-			<table border="2" id="chat-table">
+			<table border="2" id="chat-table" width="100%">
 				{% for i in range(images|length) %}
-				<COLGROUP>
-					<COL width="100">
-					<COL width="100">
-				<THEAD>
 					<center>
-						<tr>
+						<tr width="100%">
 							<td>
 								<center>{{i+1}}.</center>
 							</td>
