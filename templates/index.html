@@ -280,11 +280,14 @@
 									<center><h3> {{superchat_ammounts[i]}}</center>
 								</td>
 								<td>
-									{% if superchat_messages[i].startswith('http') %}
-									<center> <img src = {{superchat_messages[i]}} /> </center>
-									{% else %}
-									<center><h3> {{superchat_messages[i]}}</center>
-									{% endif %}
+									{% if superchat_messages[i] != None %}
+										{% if superchat_messages[i].startswith('http') %}
+										<center> <img src = {{superchat_messages[i]}} /> </center>
+										{% else %}
+										<center><h3> {{superchat_messages[i]}}</center>
+										{% endif %} 
+									{% endif %} 
+									
 								</td>
 							</tr>
 						</center>
