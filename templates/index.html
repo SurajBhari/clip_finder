@@ -224,6 +224,7 @@
 					<thead>
 						<tr>
 							<th>S. No</th>
+							<th>Avatar</th>
 							<th>Name</th>
 							<th>Message</th>
 						</tr>
@@ -234,6 +235,9 @@
 							<tr>
 								<td>
 									<center>{{i+1}}.</center>
+								</td>
+								<td>
+									<center><img src = {{new_members_images[i]}} /></center>
 								</td>
 								<td>
 									<center><h3> {{new_members[i]}}</center>
@@ -253,6 +257,7 @@
 					<thead>
 						<tr>
 							<th>S. No</th>
+							<th>Avatar</th>
 							<th>Name</th>
 							<th>Amount</th>
 							<th>Message</th>
@@ -266,12 +271,18 @@
 									<center>{{i+1}}.</center>
 								</td>
 								<td>
+									<center><img src = {{superchat_users_images[i]}} /></center>
+								</td>
+								<td>
 									<center><h3> {{superchat_users[i]}}</center>
 								</td>
 								<td>
 									<center><h3> {{superchat_ammounts[i]}}</center>
 								</td>
 								<td>
+									{% if superchat_messages[i].startswith('http') %}
+									<center> <img src = {{superchat_messages[i]}} /> </center>
+									{% else %}
 									<center><h3> {{superchat_messages[i]}}</center>
 								</td>
 							</tr>

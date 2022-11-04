@@ -73,9 +73,11 @@ def clip_finder():
     income_count = 0
     new_members = []
     new_members_m = []
+    new_members_images = []
     superchat_users = []
     superchat_ammounts = []
     superchat_messages = []
+    superchat_users_images = []
     for message in chat:
         if message["message_type"]+".json" not in known_types:
             known_types.append(message["message_type"]+".json")
@@ -83,16 +85,20 @@ def clip_finder():
                 f.write(json.dumps(message, indent=4))
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             superchat_users.append(message["author"]["name"])
+            superchat_users_images.append(message["author"]["images"][-1]["url"])
             superchat_ammounts.append(message["money"]["text"])
-            superchat_messages.append(message["message"])
+            if message["message_type"] == "paid_sticker":
+                superchat_messages.append(message['sticker_images'][-2]['url'])
+            else:
+                superchat_messages.append(message["message"])
             income_count += message["money"]["amount"]
             continue
         elif message["message_type"] in ["membership_item", "sponsorships_gift_redemption_announcement"]:
+            new_members.append(message["author"]["name"])
+            new_members_images.append(message["author"]["images"][-1]["url"])
             if message["message_type"] == "membership_item":
-                new_members.append(message["author"]["name"])
                 new_members_m.append(message["header_secondary_text"])
             elif message["message_type"] == "sponsorships_gift_redemption_announcement":
-                new_members.append(message["author"]["name"])
                 new_members_m.append(message["message"])
             continue
         elif message["message_type"] in ["viewer_engagement_message", "ticker_paid_sticker_item", "ticker_sponsor_item", "ticker_paid_message_item", "sponsorships_gift_purchase_announcement"]:
@@ -141,9 +147,11 @@ def clip_finder():
         chat_count = chat_count,
         new_members = new_members,
         new_members_m = new_members_m,
+        new_members_images=new_members_images,
         superchat_ammounts = superchat_ammounts,
         superchat_users = superchat_users,
         superchat_messages = superchat_messages,
+        superchat_users_images = superchat_users_images,
         income_count = income_count,
         result=True
     )
