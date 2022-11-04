@@ -3,11 +3,47 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Clip Finder part2</title>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 		<style>
+			.styled-table {
+				border-collapse: collapse;
+				margin: 25px 0;
+				font-size: 0.9em;
+				font-family: sans-serif;
+				min-width: 400px;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+			}
+
+			.styled-table thead tr {
+				background-color: #009879;
+				color: #ffffff;
+				text-align: left;
+			}
+
+			.styled-table th,
+			.styled-table td {
+				padding: 12px 15px;
+			}
+
+			.styled-table tbody tr {
+				border-bottom: 1px solid #dddddd;
+			}
+			
+			.styled-table tbody tr:nth-of-type(even) {
+				background-color: #f3f3f3;
+			}
+			
+			.styled-table tbody tr:last-of-type {
+				border-bottom: 2px solid #009879;
+			}
+
+			.styled-table tbody tr.active-row {
+				font-weight: bold;
+				color: #009879;
+			}
+
 			body {
                 background: radial-gradient(ellipse at bottom, var(#223344) 0%, var(#090a0f) 100%);
-                background-image: url('https://picsum.photos/1360/768/?blur=10&nocache=<?php echo time(); ?>'); 
+				background-color: #4e4e4f;
                 background-repeat: no-repeat;
                 background-size: cover;
                 animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
@@ -36,15 +72,15 @@
                 <h2>Enter a YouTube URL to find the exact time a specific word was said in chat</h2>
 				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" width="50%"></p>
                 <h2> Enter Keyword(s) (seperate multiple by commas) </h2>
-				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords" width="50%"></p>
+				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma), Leave empty if you want all of that chats." name="keywords" width="50%"></p>
 				<p><input type="submit" value="Sumbit"/></p>
 			</form>
 		</center>
 		{% endblock %}
 		<div class="result">
 			<center>
-				<table border="2" id="info-table", width="100%">
-					<tr>
+				<table border="0" id="info-table", width="100%" class="styled-table">
+					
 						<td>
 							<center>
 								<a href={{ thumbnail_link }}><button>Thumbnail</button></a>
@@ -84,7 +120,17 @@
 				</table>
 			</center>
 			<center>
-			<table border="2" id="chat-table" width="100%">
+			<table border="0" class="styled-table" width="100%">
+				<thead>
+					<tr>
+						<th>S. No</th>
+						<th>Name</th>
+						<th>Avatar</th>
+						<th>Direct Link</th>
+						<th>Chat Content</th>
+					</tr>
+				</thead>
+				<tr>
 				{% for i in range(images|length) %}
 					<center>
 						<tr width="100%">
