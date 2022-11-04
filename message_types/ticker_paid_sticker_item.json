@@ -1,0 +1,103 @@
+{
+    "time_in_seconds": 15708,
+    "action_type": "add_live_chat_ticker_item",
+    "message_id": "ChwKGkNQeTdsdDI4bFBvQ0ZaakV3Z1FkZW9jTkZn",
+    "ticker_duration": 600,
+    "ticker_icons": [
+        {
+            "url": "https://lh3.googleusercontent.com/FUruGpu-Os8ofvdfT2vrh4XveA5cN2HmUXJniVw1VIe57nTKtfMzQMM8nqZsLXiYwe2hAchNuoHEQbY4CHM",
+            "id": "source"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/FUruGpu-Os8ofvdfT2vrh4XveA5cN2HmUXJniVw1VIe57nTKtfMzQMM8nqZsLXiYwe2hAchNuoHEQbY4CHM=s32-rp",
+            "width": 32,
+            "height": 32,
+            "id": "32x32"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/FUruGpu-Os8ofvdfT2vrh4XveA5cN2HmUXJniVw1VIe57nTKtfMzQMM8nqZsLXiYwe2hAchNuoHEQbY4CHM=s64-rp",
+            "width": 64,
+            "height": 64,
+            "id": "64x64"
+        }
+    ],
+    "start_background_colour": "#f57c00ff",
+    "end_background_colour": "#e65100ff",
+    "timestamp": 1663165118183153,
+    "time_text": "4:21:48",
+    "sticker_images": [
+        {
+            "url": "https://lh3.googleusercontent.com/wVzYd8zv1p_DWxI7ITpkslZuCK0gEYDD0muVXizG4zASV62mdvhPQbkOD5u4zWbCJnBK613ogveli61-GME",
+            "id": "source"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/wVzYd8zv1p_DWxI7ITpkslZuCK0gEYDD0muVXizG4zASV62mdvhPQbkOD5u4zWbCJnBK613ogveli61-GME=s120-rwa",
+            "width": 120,
+            "height": 120,
+            "id": "120x120"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/wVzYd8zv1p_DWxI7ITpkslZuCK0gEYDD0muVXizG4zASV62mdvhPQbkOD5u4zWbCJnBK613ogveli61-GME=s240-rwa",
+            "width": 240,
+            "height": 240,
+            "id": "240x240"
+        }
+    ],
+    "money": {
+        "text": "\u20b9400.00",
+        "amount": 400.0,
+        "currency": "INR",
+        "currency_symbol": "\u20b9"
+    },
+    "background_colour": "#e65100ff",
+    "money_chip_text_colour": "#ffffffdf",
+    "money_chip_background_colour": "#f57c00ff",
+    "author": {
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/9Nj2Vl3iAYFyIbi1UOCfBaLgovk-J8mts6isDxWGl92BlxQTlop44ZV7umxWKdwLWCsKPceX4MU",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/9Nj2Vl3iAYFyIbi1UOCfBaLgovk-J8mts6isDxWGl92BlxQTlop44ZV7umxWKdwLWCsKPceX4MU=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/9Nj2Vl3iAYFyIbi1UOCfBaLgovk-J8mts6isDxWGl92BlxQTlop44ZV7umxWKdwLWCsKPceX4MU=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "name": "Suraj Bhari",
+        "id": "UCd__w3MzW2lVxdL7wA4nYYg",
+        "badges": [
+            {
+                "title": "New member",
+                "icons": [
+                    {
+                        "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s16-c-k",
+                        "width": 16,
+                        "height": 16,
+                        "id": "16x16"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s32-c-k",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    }
+                ]
+            }
+        ],
+        "name_text_colour": "#ffffffb3"
+    },
+    "message": null,
+    "message_type": "ticker_paid_sticker_item"
+}

@@ -1,0 +1,103 @@
+{
+    "time_in_seconds": 7777,
+    "action_type": "add_live_chat_ticker_item",
+    "message_id": "ChwKGkNJZnoxUEdlbFBvQ0ZUUXpyUVlkZEpRQmV3",
+    "money": {
+        "text": "\u20b9100.00",
+        "amount": 100.0,
+        "currency": "INR",
+        "currency_symbol": "\u20b9"
+    },
+    "ticker_duration": 120,
+    "start_background_colour": "#1de9b6ff",
+    "amount_text_colour": "#000000ff",
+    "end_background_colour": "#00bfa5ff",
+    "timestamp": 1663157103791723,
+    "message": "Ever thumbnail best! :face_with_tears_of_joy::hundred_points: #ImprovePlayTo ",
+    "emotes": [
+        {
+            "id": "\ud83d\ude02",
+            "name": ":face_with_tears_of_joy:",
+            "shortcuts": [
+                ":face_with_tears_of_joy:",
+                ":joy:"
+            ],
+            "search_terms": [
+                "face",
+                "with",
+                "tears",
+                "of",
+                "joy"
+            ],
+            "images": [
+                {
+                    "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f602.svg",
+                    "id": "source"
+                },
+                {
+                    "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f602.svg"
+                }
+            ],
+            "is_custom_emoji": false
+        },
+        {
+            "id": "\ud83d\udcaf",
+            "name": ":hundred_points:",
+            "shortcuts": [
+                ":hundred_points:",
+                ":100:"
+            ],
+            "search_terms": [
+                "hundred",
+                "points",
+                "100"
+            ],
+            "images": [
+                {
+                    "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f4af.svg",
+                    "id": "source"
+                },
+                {
+                    "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f4af.svg"
+                }
+            ],
+            "is_custom_emoji": false
+        }
+    ],
+    "time_text": "2:09:37",
+    "timestamp_colour": "#00000080",
+    "body_background_colour": "#1de9b6ff",
+    "header_text_colour": "#000000ff",
+    "header_background_colour": "#00bfa5ff",
+    "body_text_colour": "#000000ff",
+    "author": {
+        "name": "Vishrut Mangalvedhekar",
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/ytc/AMLnZu9e8A1kYx28mGpCBxfP9RTddEVhf1f0z7Y9PJIegKQ",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/ytc/AMLnZu9e8A1kYx28mGpCBxfP9RTddEVhf1f0z7Y9PJIegKQ=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/ytc/AMLnZu9e8A1kYx28mGpCBxfP9RTddEVhf1f0z7Y9PJIegKQ=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "id": "UCt7bkA_kFJZJCrA2VX_VhPw",
+        "badges": [
+            {
+                "title": "Moderator",
+                "icon_name": "moderator"
+            }
+        ],
+        "name_text_colour": "#0000008a"
+    },
+    "message_type": "ticker_paid_message_item"
+}

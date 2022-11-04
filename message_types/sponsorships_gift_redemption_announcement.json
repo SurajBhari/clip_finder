@@ -1,0 +1,31 @@
+{
+    "time_in_seconds": 8137.93,
+    "action_type": "add_chat_item",
+    "message_id": "ChwKGkNNT0UzSzZnbFBvQ0ZUQUwxZ0FkTUdFQlB3",
+    "timestamp": 1663157463986568,
+    "time_text": "2:15:37",
+    "message": "was gifted a membership by HydraFlick",
+    "author": {
+        "id": "UCGcp8IvkhouERq-ZdjbBNJg",
+        "name": "Dhriti",
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/VWpEE_oKKwrfzr5ckjL6bJYQ7EZsaMRit-SlK2HhrsBupkaSHULwPdEzIk5W3Hje9KULcLXW-7Y",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/VWpEE_oKKwrfzr5ckjL6bJYQ7EZsaMRit-SlK2HhrsBupkaSHULwPdEzIk5W3Hje9KULcLXW-7Y=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/VWpEE_oKKwrfzr5ckjL6bJYQ7EZsaMRit-SlK2HhrsBupkaSHULwPdEzIk5W3Hje9KULcLXW-7Y=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ]
+    },
+    "message_type": "sponsorships_gift_redemption_announcement"
+}

@@ -1,0 +1,31 @@
+{
+    "time_in_seconds": 56.9,
+    "action_type": "add_chat_item",
+    "message": "hello",
+    "message_id": "CkUKGkNNZmZwNkdDbFBvQ0ZYTXFyUVlkR09rR2ZBEidDT2ZVeDUtQ2xQb0NGYXpuY3dFZHBnY1BwdzE2NjMxNDkzODEzMjk%3D",
+    "timestamp": 1663149382692880,
+    "time_text": "0:56",
+    "author": {
+      "name": "Anushka Gupta",
+      "images": [
+        {
+          "url": "https://yt4.ggpht.com/abB6XbfkeVJWwTV0W3FJaKg8KuDdJeNY0aTwGh02YZbp5iuRBAMll3UyL2G44zM7oeQgRFUG",
+          "id": "source"
+        },
+        {
+          "url": "https://yt4.ggpht.com/abB6XbfkeVJWwTV0W3FJaKg8KuDdJeNY0aTwGh02YZbp5iuRBAMll3UyL2G44zM7oeQgRFUG=s32-c-k-c0x00ffffff-no-rj",
+          "width": 32,
+          "height": 32,
+          "id": "32x32"
+        },
+        {
+          "url": "https://yt4.ggpht.com/abB6XbfkeVJWwTV0W3FJaKg8KuDdJeNY0aTwGh02YZbp5iuRBAMll3UyL2G44zM7oeQgRFUG=s64-c-k-c0x00ffffff-no-rj",
+          "width": 64,
+          "height": 64,
+          "id": "64x64"
+        }
+      ],
+      "id": "UC6Iaio-UdfnGed0ayfWfhvg"
+    },
+    "message_type": "text_message"
+  }

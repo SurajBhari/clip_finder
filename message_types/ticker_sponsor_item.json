@@ -1,0 +1,81 @@
+{
+    "time_in_seconds": 7939,
+    "action_type": "add_live_chat_ticker_item",
+    "message_id": "ChwKGkNKMnJpZENmbFBvQ0ZSVUFmUW9kei1ZRXZR",
+    "message": null,
+    "sponsor_icons": [
+        {
+            "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw",
+            "id": "source"
+        },
+        {
+            "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw=s32-c-k-c0x00ffffff-no-rj",
+            "width": 32,
+            "height": 32,
+            "id": "32x32"
+        },
+        {
+            "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw=s64-c-k-c0x00ffffff-no-rj",
+            "width": 64,
+            "height": 64,
+            "id": "64x64"
+        }
+    ],
+    "ticker_duration": 300,
+    "start_background_colour": "#0f9d58ff",
+    "end_background_colour": "#0b8043ff",
+    "detail_text_colour": "#ffffffff",
+    "timestamp": 1663157265537684,
+    "time_text": "2:12:19",
+    "header_secondary_text": "Welcome to Diamond!",
+    "author": {
+        "id": "UCySJrnD7XS16fF4qLFSaNuw",
+        "name": "HydraFlick",
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/0StEyVqThykHaBqadPzEywACghLUyzPu9i4LvaNyqbbH8JJPEsDyRf-gwauUSHzLpS5i7w_JIw=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "badges": [
+            {
+                "title": "Verified",
+                "icon_name": "verified"
+            },
+            {
+                "title": "Member (2 months)",
+                "icons": [
+                    {
+                        "url": "https://yt3.ggpht.com/RAaY7a_xVexuzDu0d9fShN3WfkHD33Kc9rvQdJx1gSBB_J4eCmDY-ca5WvqcyBi2t_Yefh9zIQ",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/RAaY7a_xVexuzDu0d9fShN3WfkHD33Kc9rvQdJx1gSBB_J4eCmDY-ca5WvqcyBi2t_Yefh9zIQ=s16-c-k",
+                        "width": 16,
+                        "height": 16,
+                        "id": "16x16"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/RAaY7a_xVexuzDu0d9fShN3WfkHD33Kc9rvQdJx1gSBB_J4eCmDY-ca5WvqcyBi2t_Yefh9zIQ=s32-c-k",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    }
+                ]
+            }
+        ]
+    },
+    "message_type": "ticker_sponsor_item"
+}

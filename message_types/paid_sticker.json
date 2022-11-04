@@ -1,0 +1,86 @@
+{
+    "time_in_seconds": 12008.311,
+    "action_type": "add_chat_item",
+    "message_id": "ChwKGkNKSGRrY0d1bFBvQ0ZiQXpyUVlkeEFzTEhB",
+    "timestamp": 1663161334399390,
+    "time_text": "3:20:08",
+    "sticker_images": [
+        {
+            "url": "https://lh3.googleusercontent.com/-21C0x6zYcDxpJVYKl8CCKroyjW2Hdvh2FWBipCTFhonaPy2cSJZWTGvmjsoBJu-LedOHQrw1Qu7TYXxIlxv",
+            "id": "source"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/-21C0x6zYcDxpJVYKl8CCKroyjW2Hdvh2FWBipCTFhonaPy2cSJZWTGvmjsoBJu-LedOHQrw1Qu7TYXxIlxv=s72-rwa",
+            "width": 72,
+            "height": 72,
+            "id": "72x72"
+        },
+        {
+            "url": "https://lh3.googleusercontent.com/-21C0x6zYcDxpJVYKl8CCKroyjW2Hdvh2FWBipCTFhonaPy2cSJZWTGvmjsoBJu-LedOHQrw1Qu7TYXxIlxv=s144-rwa",
+            "width": 144,
+            "height": 144,
+            "id": "144x144"
+        }
+    ],
+    "money": {
+        "text": "\u20b940.00",
+        "amount": 40.0,
+        "currency": "INR",
+        "currency_symbol": "\u20b9"
+    },
+    "background_colour": "#00b8d4ff",
+    "money_chip_text_colour": "#000000ff",
+    "money_chip_background_colour": "#00e5ffff",
+    "author": {
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/_iLgg5EI3iVojMLHoQh4RH3kTzIYJlLXPLKMpJMBsvEphdEbPyJjNLS9ijpalxQBWa5qV6vT0bQ",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/_iLgg5EI3iVojMLHoQh4RH3kTzIYJlLXPLKMpJMBsvEphdEbPyJjNLS9ijpalxQBWa5qV6vT0bQ=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/_iLgg5EI3iVojMLHoQh4RH3kTzIYJlLXPLKMpJMBsvEphdEbPyJjNLS9ijpalxQBWa5qV6vT0bQ=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "name": "Suraj",
+        "id": "UCbZZmB8L3IEHutGbvpWo9Ow",
+        "badges": [
+            {
+                "title": "Moderator",
+                "icon_name": "moderator"
+            },
+            {
+                "title": "Member (1 year)",
+                "icons": [
+                    {
+                        "url": "https://yt3.ggpht.com/E05V1WoYUg3qx8SZBdEckIpmvSGUeYF_l9ItwOgK7zttS3f1NWXJhso2y2B9CSQzoCbIkONa4A",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/E05V1WoYUg3qx8SZBdEckIpmvSGUeYF_l9ItwOgK7zttS3f1NWXJhso2y2B9CSQzoCbIkONa4A=s16-c-k",
+                        "width": 16,
+                        "height": 16,
+                        "id": "16x16"
+                    },
+                    {
+                        "url": "https://yt3.ggpht.com/E05V1WoYUg3qx8SZBdEckIpmvSGUeYF_l9ItwOgK7zttS3f1NWXJhso2y2B9CSQzoCbIkONa4A=s32-c-k",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    }
+                ]
+            }
+        ],
+        "name_text_colour": "#000000b3"
+    },
+    "message": null,
+    "message_type": "paid_sticker"
+}

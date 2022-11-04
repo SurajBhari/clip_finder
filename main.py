@@ -1,7 +1,7 @@
 from re import T
 from chat_downloader import ChatDownloader, errors
 from youtubesearchpython import Video
-
+from os import listdir
 import datetime
 from flask import Flask, render_template, request
 
@@ -68,10 +68,15 @@ def clip_finder():
         return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     chat_count = 0
     message_count = {}
-    different_type = {}
+    known_types = listdir('message_types')
+    print("known message types are" + ",\n".join(known_types))
     income_count = 0
     new_member = 0
     for message in chat:
+        if message["message_type"]+".json" not in known_types:
+            known_types.append(message["message_type"]+".json")
+            with open("message_types/"+message["message_type"]+".json", "w") as f:
+                f.write(json.dumps(message, indent=4))
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             income_count += message["money"]["amount"]
             continue
@@ -97,14 +102,6 @@ def clip_finder():
                 except KeyError:
                     message_count[message['author']['name']] = 1
                 chat_count += 1
-        else:
-            print("Found something new message type", message["message_type"])
-            try:
-                different_type[message["message_type"]].append(message)
-            except KeyError:
-                different_type[message["message_type"]] = [message]
-            with open("different_type.json", "w") as f:
-                json.dump(different_type, f, indent=4)
         
     message_count = sorted(message_count.items(), key=lambda x: x[1], reverse=True)[:5]
     top_chatter_count = []

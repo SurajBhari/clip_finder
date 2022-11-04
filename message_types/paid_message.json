@@ -1,0 +1,49 @@
+{
+    "time_in_seconds": 1176.759,
+    "action_type": "add_chat_item",
+    "message_id": "ChwKGkNNamtxYS1HbFBvQ0ZWWUtyUVlkTWEwUEhR",
+    "timestamp": 1663150502605193,
+    "money": {
+        "text": "\u20b929.00",
+        "amount": 29.0,
+        "currency": "INR",
+        "currency_symbol": "\u20b9"
+    },
+    "time_text": "19:36",
+    "timestamp_colour": "#ffffff80",
+    "body_background_colour": "#1e88e5ff",
+    "header_text_colour": "#ffffffff",
+    "header_background_colour": "#1565c0ff",
+    "body_text_colour": "#ffffffff",
+    "author": {
+        "name": "VEDANT GADHAVI",
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/sWmzm_qAN2e9VJrKqU4S8ilrR-HkxNnDmPD0bO9cIetnY-HiJkqI-YvaUhR6ZNU181zsFsPszg",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/sWmzm_qAN2e9VJrKqU4S8ilrR-HkxNnDmPD0bO9cIetnY-HiJkqI-YvaUhR6ZNU181zsFsPszg=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/sWmzm_qAN2e9VJrKqU4S8ilrR-HkxNnDmPD0bO9cIetnY-HiJkqI-YvaUhR6ZNU181zsFsPszg=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "id": "UCkiMjErcbbdZ8U9gkOGqRcw",
+        "badges": [
+            {
+                "title": "Moderator",
+                "icon_name": "moderator"
+            }
+        ],
+        "name_text_colour": "#ffffffb3"
+    },
+    "message": null,
+    "message_type": "paid_message"
+}
