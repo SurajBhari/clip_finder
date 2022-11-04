@@ -73,12 +73,18 @@ def clip_finder():
     income_count = 0
     new_members = []
     new_members_m = []
+    superchat_users = []
+    superchat_ammounts = []
+    superchat_messages = []
     for message in chat:
         if message["message_type"]+".json" not in known_types:
             known_types.append(message["message_type"]+".json")
             with open("message_types/"+message["message_type"]+".json", "w") as f:
                 f.write(json.dumps(message, indent=4))
         if message["message_type"] in ["paid_message", "paid_sticker"]:
+            superchat_users.append(message["author"]["name"])
+            superchat_ammounts.append(message["money"]["text"])
+            superchat_messages.append(message["message"])
             income_count += message["money"]["amount"]
             continue
         elif message["message_type"] in ["membership_item", "sponsorships_gift_redemption_announcement"]:
@@ -135,6 +141,9 @@ def clip_finder():
         chat_count = chat_count,
         new_members = new_members,
         new_members_m = new_members_m,
+        superchat_ammounts = superchat_ammounts,
+        superchat_users = superchat_users,
+        superchat_messages = superchat_messages,
         income_count = income_count,
         result=True
     )
