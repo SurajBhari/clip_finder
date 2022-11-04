@@ -62,6 +62,17 @@
 				visibility: hidden;
 				{% endif %}
 			}
+			.chatter-data{
+				{% if top_chatter_name|length == 0 %}
+				visibility: hidden;
+				{% endif %}
+			}
+			.membership-data{
+				{% if new_members|length == 0 %}
+				visibility: hidden;
+				{% endif %}
+			}
+
 
 		</style>
 	</head>
@@ -155,34 +166,65 @@
 			</table>
 
 
-
-			<table border="0" class="styled-table">
-				<thead>
-					<tr>
-						<th>S. No</th>
-						<th>Name</th>
-						<th>Chat Count</th>
-					</tr>
-				</thead>
-				<tr>
-				{% for i in range(top_chatter_name|length) %}
-					<center>
+			<div class="chatter-data">
+				<center><h1>Top Chatter Data</center>
+				<table border="0" class="styled-table">
+					<thead>
 						<tr>
-							<td>
-								<center>{{i+1}}.</center>
-							</td>
-							<td>
-								<center><h3> {{top_chatter_name[i]}}</center>
-							</td>
-							<td>
-								<center><h3> {{top_chatter_count[i]}}</center>
-							</td>
+							<th>S. No</th>
+							<th>Name</th>
+							<th>Chat Count</th>
 						</tr>
-					</center>
-					{% endfor %}   
-			</table>
+					</thead>
+					<tr>
+					{% for i in range(top_chatter_name|length) %}
+						<center>
+							<tr>
+								<td>
+									<center>{{i+1}}.</center>
+								</td>
+								<td>
+									<center><h3> {{top_chatter_name[i]}}</center>
+								</td>
+								<td>
+									<center><h3> {{top_chatter_count[i]}}</center>
+								</td>
+							</tr>
+						</center>
+						{% endfor %}   
+				</table>
+			</div>
+
+			<div class="membership-data">
+				<center><h1>Membership Data</center>
+				<table border="0" class="styled-table">
+					<thead>
+						<tr>
+							<th>S. No</th>
+							<th>Name</th>
+							<th>Message</th>
+						</tr>
+					</thead>
+					<tr>
+					{% for i in range(new_members|length) %}
+						<center>
+							<tr>
+								<td>
+									<center>{{i+1}}.</center>
+								</td>
+								<td>
+									<center><h3> {{new_members[i]}}</center>
+								</td>
+								<td>
+									<center><h3> {{new_members_m[i]}}</center>
+								</td>
+							</tr>
+						</center>
+						{% endfor %}   
+				</table>
+			</div>
 			<center> <h1> Chat Count : {{chat_count}} </center>
-			<center> <h1> New Member Count : {{new_member}} </center>
+			<center> <h1> New Member Count : {{new_members|length}} </center>
 			<center> <h1> Superchat/sticker Income : {{income_count}} </center>
 		</div>
 	</body>

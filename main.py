@@ -69,9 +69,10 @@ def clip_finder():
     chat_count = 0
     message_count = {}
     known_types = listdir('message_types')
-    print("known message types are" + ",\n".join(known_types))
+    print("known message types are" + "\n".join(known_types))
     income_count = 0
-    new_member = 0
+    new_members = []
+    new_members_m = []
     for message in chat:
         if message["message_type"]+".json" not in known_types:
             known_types.append(message["message_type"]+".json")
@@ -81,7 +82,12 @@ def clip_finder():
             income_count += message["money"]["amount"]
             continue
         elif message["message_type"] in ["membership_item", "sponsorships_gift_redemption_announcement"]:
-            new_member += 1
+            if message["message_type"] == "membership_item":
+                new_members.append(message["author"]["name"])
+                new_members_m.append(message["header_secondary_text"])
+            elif message["message_type"] == "sponsorships_gift_redemption_announcement":
+                new_members.append(message["author"]["name"])
+                new_members_m.append(message["message"])
             continue
         elif message["message_type"] in ["viewer_engagement_message", "ticker_paid_sticker_item", "ticker_sponsor_item", "ticker_paid_message_item", "sponsorships_gift_purchase_announcement"]:
             continue # ignore these messagestypes
@@ -127,7 +133,8 @@ def clip_finder():
         top_chatter_name=top_chatter_name,
         top_chatter_count=top_chatter_count,
         chat_count = chat_count,
-        new_member = new_member,
+        new_members = new_members,
+        new_members_m = new_members_m,
         income_count = income_count,
         result=True
     )
