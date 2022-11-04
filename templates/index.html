@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Clip Finder part2</title>
+		<title>Clip Finder</title>
 		<style>
 			.styled-table {
 				border-collapse: collapse;
@@ -138,7 +138,7 @@
 								<center>{{i+1}}.</center>
 							</td>
 							<td>
-								<center>{{names[i]}}</center>
+								<center><h3> {{names[i]}}</center>
 							</td>
 							<td>
 								<center><img src={{  images[i] }} alt="Sorry, No Display!" border="0" class="avatar"/></center>
@@ -148,13 +148,42 @@
 							</td>
 							<td>
 								<center>
-									<p> {{ chats[i] }} </p>
+									<p> <h2> {{ chats[i] }} </p>
 								</center>
 							</td>
 						</tr>
 					</center>
 					{% endfor %}   
 			</table>
+
+
+
+			<table border="0" class="styled-table" width="100%">
+				<thead>
+					<tr width="100%">
+						<th>S. No</th>
+						<th>Name</th>
+						<th>Chat Count</th>
+					</tr>
+				</thead>
+				<tr>
+				{% for i in range(top_chatter_name|length) %}
+					<center>
+						<tr width="100%">
+							<td>
+								<center>{{i+1}}.</center>
+							</td>
+							<td>
+								<center><h3> {{top_chatter_name[i]}}</center>
+							</td>
+							<td>
+								<center><h3> {{top_chatter_count[i]}}</center>
+							</td>
+						</tr>
+					</center>
+					{% endfor %}   
+			</table>
+			<center> Chat Count : {{chat_count}} </center>
 		</div>
 	</body>
 </html>

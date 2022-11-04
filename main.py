@@ -64,9 +64,11 @@ def clip_finder():
         chat = ChatDownloader().get_chat(video_id) # get chat
     except errors.NoChatReplay:
         return "Please wait till the stream get rendered properly from yotube side to prevent issues."
+    chat_count = 0
+    message_count = {}
     for message in chat:
         for word in key_word:
-            if word in message['message'].lower().split():
+            if ((word in message['message'].lower().split()) or (word in message['author']['name'].lower())):
                 link = "https://youtu.be/"+video_id+"?t="+str(int(message['time_in_seconds']))
                 image_link = message['author']['images'][1]['url']
                 chat = message['message']
@@ -76,9 +78,19 @@ def clip_finder():
                 chats.append(chat)
                 images.append(image_link)
                 links.append(link)
-                
-    if not string:
-        return "No data found"
+        chat_count += 1
+        try:
+            message_count[message['author']['name']] += 1
+        except KeyError:
+            message_count[message['author']['name']] = 1
+    message_count = sorted(message_count.items(), key=lambda x: x[1], reverse=True)[:5]
+    top_chatter_count = []
+    top_chatter_name = []
+
+    for x,y in message_count:
+        top_chatter_name.append(x)
+        top_chatter_count.append(y)
+
     return render_template(
         "index.html",
         title=title,
@@ -91,7 +103,10 @@ def clip_finder():
         links=links, 
         chats=chats, 
         images=images, 
-        names=names
+        names=names,
+        top_chatter_name=top_chatter_name,
+        top_chatter_count=top_chatter_count,
+        chat_count = chat_count
     )
 
 app.run(debug=False, host="0.0.0.0", port=8080)
