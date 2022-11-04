@@ -57,6 +57,29 @@
                 white-space: pre-wrap;
                 font-size: small;
 			}
+			
+			.button {
+				background-color: #4CAF50; /* Green */
+				border: none;
+				color: white;
+				padding: 16px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				margin: 4px 2px;
+				transition-duration: 0.4s;
+				cursor: pointer;
+				background-color: #4e4e4f; 
+				color: black; 
+				border: 2px solid #4CAF50;
+			}
+			  
+			.button:hover {
+				background-color: #4CAF50;
+				color: white;
+			}
+
 			.result{
 				{% if result == False %}
 				visibility: hidden;
@@ -105,7 +128,7 @@
 				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" ></p>
                 <h2> Enter Keyword(s) (seperate multiple by commas) </h2>
 				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma), Leave empty if you want all of that chats." name="keywords"></p>
-				<p><input type="submit" value="Sumbit" onclick="loading();"/></p>
+				<p><input type="submit" value="Sumbit" onclick="loading();" class="button"/></p>
 			</form>
 		<div class="loading">
 			<img src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" id="loading" alt="Loading" width="5%" height="5%" />
@@ -117,7 +140,7 @@
 				<table border="0" id="info-table">
 						<td>
 							<center>
-								<a href={{ thumbnail_link }}><button>Thumbnail</button></a>
+								<a href={{ thumbnail_link }}><button class="button">Thumbnail</button></a>
 							</center>
 						</td>
 					</tr>
@@ -138,7 +161,7 @@
 					<tr>
 						<td>
 							<center>
-								<a href={{ video_direct_link }}><button>Download</button></a>
+								<a href={{ video_direct_link }}><button class="button">Download</button></a>
 							</center>
 						</td>
 					</tr>
@@ -176,7 +199,7 @@
 								<center><img src={{  images[i] }} alt="Sorry, No Display!" border="0" class="avatar"/></center>
 							</td>
 							<td>
-								<center><a href = {{ links[i] }}> Click here </a></center>
+								<center><a href = {{ links[i] }}> {{ timestamps[i] }} </a></center>
 							</td>
 							<td>
 								<center>
@@ -287,7 +310,6 @@
 										<center><h3> {{superchat_messages[i]}}</center>
 										{% endif %} 
 									{% endif %} 
-									
 								</td>
 							</tr>
 						</center>

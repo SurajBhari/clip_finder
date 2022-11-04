@@ -44,6 +44,7 @@ def clip_finder():
     chats = []
     images = []
     names = []
+    timestamps = []
     video_data = Video.get(video_id)
     embed_link = "https://www.youtube.com/embed/"+video_id
 
@@ -107,14 +108,16 @@ def clip_finder():
             for word in key_word:
                 if ((word in message['message'].lower().split()) or (word in message['author']['name'].lower())):
                     link = "https://youtu.be/"+video_id+"?t="+str(int(message['time_in_seconds']))
-                    image_link = message['author']['images'][1]['url']
+                    image_link = message['author']['images'][2]['url']
                     chat = message['message']
                     name = message['author']['name']
+                    timestamp = message["time_text"]
                     string += '</br>' + f"<img src = \"{image_link}\"> {name} " "<a href=\"" + link + f"\"> "+ "."*100 + f"  {link} - </a> " + chat
                     names.append(name)
                     chats.append(chat)
                     images.append(image_link)
                     links.append(link)
+                    timestamps.append(timestamp)
                 try:
                     message_count[message['author']['name']] += 1
                 except KeyError:
@@ -142,6 +145,7 @@ def clip_finder():
         chats=chats, 
         images=images, 
         names=names,
+        timestamps=timestamps,
         top_chatter_name=top_chatter_name,
         top_chatter_count=top_chatter_count,
         chat_count = chat_count,
