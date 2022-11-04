@@ -54,7 +54,7 @@ def clip_finder():
     duration = datetime.timedelta(seconds=duration)
     duration = str(duration)
     description = video_data["description"]
-    thumbnail_link = "https://i.ytimg.com/vi/Fudk3KU4e4k/maxresdefault.jpg?v=" + video_id
+    thumbnail_link = "https://i.ytimg.com/vi/" + video_id + "/maxresdefault.jpg"
     if video_data["isLiveNow"]:
         return "Please wait till the stream get over to prevent issues."
     try:

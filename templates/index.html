@@ -72,6 +72,11 @@
 				visibility: hidden;
 				{% endif %}
 			}
+			.answer{
+				{% if names|length == 0 %}
+				visibility: hidden;
+				{% endif %}
+			}
 
 
 		</style>
@@ -129,7 +134,7 @@
 				</table>
 			</center>
 			<center>
-			<table border="0" class="styled-table">
+			<table border="0" class="styled-table answer">
 				<thead>
 					<tr>
 						<th>S. No</th>
