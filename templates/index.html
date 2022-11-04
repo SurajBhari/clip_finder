@@ -55,7 +55,7 @@
             }
 			p {
                 white-space: pre-wrap;
-                font-size: xx-small;
+                font-size: small;
 			}
 			.result{
 				{% if result == False %}
@@ -80,8 +80,7 @@
 		{% endblock %}
 		<div class="result">
 			<center>
-				<table border="0" id="info-table" class="styled-table">
-					
+				<table border="0" id="info-table">
 						<td>
 							<center>
 								<a href={{ thumbnail_link }}><button>Thumbnail</button></a>
@@ -185,6 +184,8 @@
 					{% endfor %}   
 			</table>
 			<center> <h1> Chat Count : {{chat_count}} </center>
+			<center> <h1> New Member Count : {{new_member}} </center>
+			<center> <h1> Superchat/sticker Income : {{income_count}} </center>
 		</div>
 	</body>
 </html>

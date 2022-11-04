@@ -1,0 +1,768 @@
+{
+    "viewer_engagement_message": [
+        {
+            "time_in_seconds": 0.0,
+            "action_type": "add_chat_item",
+            "message_id": "CiMKIVJFUExBWV9WRU0yMDIyLzExLzA0LTA4OjU3OjEzLjE0Mg%3D%3D",
+            "timestamp": 1667577433142459,
+            "icon": "YOUTUBE_ROUND",
+            "message": "Live chat replay is on. Messages that appeared when the stream was live will show up here.",
+            "time_text": "0:00",
+            "message_type": "viewer_engagement_message"
+        }
+    ],
+    "banner": [
+        {
+            "time_in_seconds": 36,
+            "action_type": "add_banner_to_live_chat",
+            "icon": "KEEP",
+            "message": "500K on Insta REEL!:exploding_head: https://www.instagram.com/toaster_roaster7/",
+            "emotes": [
+                {
+                    "id": "\ud83e\udd2f",
+                    "name": ":exploding_head:",
+                    "shortcuts": [
+                        ":exploding_head:"
+                    ],
+                    "search_terms": [
+                        "exploding",
+                        "head"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f92f.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f92f.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                }
+            ],
+            "message_id": "CjkKGkNJblEyX3JGa2ZzQ0ZmTUdmUW9kenhrS1dBEhtDSWlScE96RWtmc0NGZXpET0FZZG9sNEFMdzA%3D",
+            "timestamp": 1667462522786558,
+            "time_text": "0:36",
+            "author": {
+                "name": "ToasterRoaster",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "Owner",
+                        "icon_name": "owner"
+                    }
+                ],
+                "id": "UCIzzPhdRf8Olo3WjiexcZSw"
+            },
+            "header_message": "Pinned by ToasterRoaster",
+            "message_type": "banner"
+        },
+        {
+            "time_in_seconds": 36,
+            "action_type": "add_banner_to_live_chat",
+            "icon": "KEEP",
+            "message": "500K on Insta REEL!:exploding_head: https://www.instagram.com/toaster_roaster7/",
+            "emotes": [
+                {
+                    "id": "\ud83e\udd2f",
+                    "name": ":exploding_head:",
+                    "shortcuts": [
+                        ":exploding_head:"
+                    ],
+                    "search_terms": [
+                        "exploding",
+                        "head"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f92f.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f92f.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                }
+            ],
+            "message_id": "CjkKGkNJblEyX3JGa2ZzQ0ZmTUdmUW9kenhrS1dBEhtDSWlScE96RWtmc0NGZXpET0FZZG9sNEFMdzA%3D",
+            "timestamp": 1667462522786558,
+            "time_text": "0:36",
+            "author": {
+                "name": "ToasterRoaster",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "Owner",
+                        "icon_name": "owner"
+                    }
+                ],
+                "id": "UCIzzPhdRf8Olo3WjiexcZSw"
+            },
+            "header_message": "Pinned by ToasterRoaster",
+            "message_type": "banner"
+        }
+    ],
+    "remove_banner": [
+        {
+            "time_in_seconds": 44.489,
+            "action_type": "remove_banner_for_live_chat",
+            "target_message_id": "ChwKGkNOZTU1UHZGa2ZzQ0ZmVEN3Z1FkWE9jRnlB",
+            "time_text": "0:44",
+            "message": null,
+            "message_type": "remove_banner"
+        }
+    ],
+    "membership_item": [
+        {
+            "time_in_seconds": 1539.887,
+            "action_type": "add_chat_item",
+            "message_id": "ChwKGkNKLUhzTWZMa2ZzQ0ZkVEV3Z1FkLVZFTnpR",
+            "timestamp": 1667464025700917,
+            "time_text": "25:39",
+            "header_secondary_text": "Welcome to Silver!",
+            "author": {
+                "id": "UCvWA-9FL3x8vjDqhQP_Feyw",
+                "name": "Hey Eshwar",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "Member (1 month)",
+                        "icons": [
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw",
+                                "id": "source"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s16-c-k",
+                                "width": 16,
+                                "height": 16,
+                                "id": "16x16"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s32-c-k",
+                                "width": 32,
+                                "height": 32,
+                                "id": "32x32"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message": null,
+            "message_type": "membership_item"
+        },
+        {
+            "time_in_seconds": 9838.489,
+            "action_type": "add_chat_item",
+            "message_id": "Ci8KLUNQRzR1TXpfM3ZvQ0ZSTTdzd0Fkc2JNRXpRLUxveU1lc0lELTMzMzQ5NDQ2NA%3D%3D",
+            "timestamp": 1667472324364351,
+            "time_text": "2:43:58",
+            "header_primary_text": "Member for 2 months",
+            "header_secondary_text": "Silver",
+            "message": "can u play skye - win & get 20k? kuch seekh lunga",
+            "author": {
+                "id": "UCnyPzkCSRMDLZvOXz08H2vw",
+                "name": "Ameya Ahuja",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/ytc/AMLnZu9vDT_xEGA-o20cbBiTHyZf4eWrT7y6K8VGp9ohpw",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/ytc/AMLnZu9vDT_xEGA-o20cbBiTHyZf4eWrT7y6K8VGp9ohpw=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/ytc/AMLnZu9vDT_xEGA-o20cbBiTHyZf4eWrT7y6K8VGp9ohpw=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "Member (1 month)",
+                        "icons": [
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw",
+                                "id": "source"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s16-c-k",
+                                "width": 16,
+                                "height": 16,
+                                "id": "16x16"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s32-c-k",
+                                "width": 32,
+                                "height": 32,
+                                "id": "32x32"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message_type": "membership_item"
+        },
+        {
+            "time_in_seconds": 10018.266,
+            "action_type": "add_chat_item",
+            "message_id": "ChwKGkNKS0hsNUxya2ZzQ0ZXQTByUVlkVk1jRTB3",
+            "timestamp": 1667472504095413,
+            "time_text": "2:46:58",
+            "header_secondary_text": "Welcome to Silver!",
+            "author": {
+                "id": "UCpxpWrdlIAqVEk07g0GcK8A",
+                "name": "Mishwa sanghvi",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "New member",
+                        "icons": [
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q",
+                                "id": "source"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s16-c-k",
+                                "width": 16,
+                                "height": 16,
+                                "id": "16x16"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s32-c-k",
+                                "width": 32,
+                                "height": 32,
+                                "id": "32x32"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message": null,
+            "message_type": "membership_item"
+        }
+    ],
+    "ticker_sponsor_item": [
+        {
+            "time_in_seconds": 1539,
+            "action_type": "add_live_chat_ticker_item",
+            "message_id": "ChwKGkNKLUhzTWZMa2ZzQ0ZkVEV3Z1FkLVZFTnpR",
+            "message": null,
+            "sponsor_icons": [
+                {
+                    "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ",
+                    "id": "source"
+                },
+                {
+                    "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s32-c-k-c0x00ffffff-no-rj",
+                    "width": 32,
+                    "height": 32,
+                    "id": "32x32"
+                },
+                {
+                    "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s64-c-k-c0x00ffffff-no-rj",
+                    "width": 64,
+                    "height": 64,
+                    "id": "64x64"
+                }
+            ],
+            "ticker_duration": 300,
+            "start_background_colour": "#0f9d58ff",
+            "end_background_colour": "#0b8043ff",
+            "detail_text_colour": "#ffffffff",
+            "timestamp": 1667464025700917,
+            "time_text": "25:39",
+            "header_secondary_text": "Welcome to Silver!",
+            "author": {
+                "id": "UCvWA-9FL3x8vjDqhQP_Feyw",
+                "name": "Hey Eshwar",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/8fvhFt6V5Q-gQvsvDha-DyroezHn0bCrN49JIAc1GOOOJrYXt2_b_-2ah8mx2YcJqClCT8CZQQ=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "Member (1 month)",
+                        "icons": [
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw",
+                                "id": "source"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s16-c-k",
+                                "width": 16,
+                                "height": 16,
+                                "id": "16x16"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/slo8YImTNg1WtGRklT1KghfRv5xYLpA-bS_8csimMBpMRQkyem6hJzsIhAnQFSxFryvnqw9opw=s32-c-k",
+                                "width": 32,
+                                "height": 32,
+                                "id": "32x32"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message_type": "ticker_sponsor_item"
+        },
+        {
+            "time_in_seconds": 10018,
+            "action_type": "add_live_chat_ticker_item",
+            "message_id": "ChwKGkNKS0hsNUxya2ZzQ0ZXQTByUVlkVk1jRTB3",
+            "message": null,
+            "sponsor_icons": [
+                {
+                    "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0",
+                    "id": "source"
+                },
+                {
+                    "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s32-c-k-c0x00ffffff-no-rj",
+                    "width": 32,
+                    "height": 32,
+                    "id": "32x32"
+                },
+                {
+                    "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s64-c-k-c0x00ffffff-no-rj",
+                    "width": 64,
+                    "height": 64,
+                    "id": "64x64"
+                }
+            ],
+            "ticker_duration": 300,
+            "start_background_colour": "#0f9d58ff",
+            "end_background_colour": "#0b8043ff",
+            "detail_text_colour": "#ffffffff",
+            "timestamp": 1667472504095413,
+            "time_text": "2:46:58",
+            "header_secondary_text": "Welcome to Silver!",
+            "author": {
+                "id": "UCpxpWrdlIAqVEk07g0GcK8A",
+                "name": "Mishwa sanghvi",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/zOXEq-8_-DHDcaFreQCNvLKSAofaXgKnyOLQm9WdRYL2BpFUxaETS-F4Iw-YqK-ticvZIon0=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "badges": [
+                    {
+                        "title": "New member",
+                        "icons": [
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q",
+                                "id": "source"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s16-c-k",
+                                "width": 16,
+                                "height": 16,
+                                "id": "16x16"
+                            },
+                            {
+                                "url": "https://yt3.ggpht.com/ufEY19lGSHRtgyI_wqy0TpDUv5D6uHahFRakrTPW7chdayXD2mVnpHVl12wk8kX2xoDJq9hY0Q=s32-c-k",
+                                "width": 32,
+                                "height": 32,
+                                "id": "32x32"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "message_type": "ticker_sponsor_item"
+        }
+    ],
+    "paid_message": [
+        {
+            "time_in_seconds": 2862.113,
+            "action_type": "add_chat_item",
+            "message_id": "ChwKGkNOZjJrYW5Ra2ZzQ0Zaa1lyUVlkdkh3SV9n",
+            "timestamp": 1667465348037298,
+            "money": {
+                "text": "\u20b9100.00",
+                "amount": 100.0,
+                "currency": "INR",
+                "currency_symbol": "\u20b9"
+            },
+            "message": "are tosty apke gaane sunke mai pighal gyi :full_moon_face::red_heart::backhand_index_pointing_right::backhand_index_pointing_left:thoda humare liye v gaa do",
+            "emotes": [
+                {
+                    "id": "\ud83c\udf1d",
+                    "name": ":full_moon_face:",
+                    "shortcuts": [
+                        ":full_moon_face:",
+                        ":full_moon_with_face:",
+                        "Kappa"
+                    ],
+                    "search_terms": [
+                        "full",
+                        "moon",
+                        "face",
+                        "with"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f31d.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f31d.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\u2764",
+                    "name": ":red_heart:",
+                    "shortcuts": [
+                        ":red_heart:",
+                        ":heart:",
+                        "<3"
+                    ],
+                    "search_terms": [
+                        "red",
+                        "heart"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u2764.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u2764.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\ud83d\udc49",
+                    "name": ":backhand_index_pointing_right:",
+                    "shortcuts": [
+                        ":backhand_index_pointing_right:",
+                        ":point_right:"
+                    ],
+                    "search_terms": [
+                        "backhand",
+                        "index",
+                        "pointing",
+                        "right",
+                        "point"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f449.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f449.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\ud83d\udc48",
+                    "name": ":backhand_index_pointing_left:",
+                    "shortcuts": [
+                        ":backhand_index_pointing_left:",
+                        ":point_left:"
+                    ],
+                    "search_terms": [
+                        "backhand",
+                        "index",
+                        "pointing",
+                        "left",
+                        "point"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f448.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f448.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                }
+            ],
+            "time_text": "47:42",
+            "timestamp_colour": "#00000080",
+            "body_background_colour": "#1de9b6ff",
+            "header_text_colour": "#000000ff",
+            "header_background_colour": "#00bfa5ff",
+            "body_text_colour": "#000000ff",
+            "author": {
+                "name": "Triggered smruti",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "id": "UCaDFYz6EMam-XWDf07Y07Qw",
+                "name_text_colour": "#0000008a"
+            },
+            "message_type": "paid_message"
+        }
+    ],
+    "ticker_paid_message_item": [
+        {
+            "time_in_seconds": 2862,
+            "action_type": "add_live_chat_ticker_item",
+            "message_id": "ChwKGkNOZjJrYW5Ra2ZzQ0Zaa1lyUVlkdkh3SV9n",
+            "money": {
+                "text": "\u20b9100.00",
+                "amount": 100.0,
+                "currency": "INR",
+                "currency_symbol": "\u20b9"
+            },
+            "ticker_duration": 120,
+            "start_background_colour": "#1de9b6ff",
+            "amount_text_colour": "#000000ff",
+            "end_background_colour": "#00bfa5ff",
+            "timestamp": 1667465348037298,
+            "message": "are tosty apke gaane sunke mai pighal gyi :full_moon_face::red_heart::backhand_index_pointing_right::backhand_index_pointing_left:thoda humare liye v gaa do",
+            "emotes": [
+                {
+                    "id": "\ud83c\udf1d",
+                    "name": ":full_moon_face:",
+                    "shortcuts": [
+                        ":full_moon_face:",
+                        ":full_moon_with_face:",
+                        "Kappa"
+                    ],
+                    "search_terms": [
+                        "full",
+                        "moon",
+                        "face",
+                        "with"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f31d.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f31d.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\u2764",
+                    "name": ":red_heart:",
+                    "shortcuts": [
+                        ":red_heart:",
+                        ":heart:",
+                        "<3"
+                    ],
+                    "search_terms": [
+                        "red",
+                        "heart"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u2764.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u2764.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\ud83d\udc49",
+                    "name": ":backhand_index_pointing_right:",
+                    "shortcuts": [
+                        ":backhand_index_pointing_right:",
+                        ":point_right:"
+                    ],
+                    "search_terms": [
+                        "backhand",
+                        "index",
+                        "pointing",
+                        "right",
+                        "point"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f449.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f449.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                },
+                {
+                    "id": "\ud83d\udc48",
+                    "name": ":backhand_index_pointing_left:",
+                    "shortcuts": [
+                        ":backhand_index_pointing_left:",
+                        ":point_left:"
+                    ],
+                    "search_terms": [
+                        "backhand",
+                        "index",
+                        "pointing",
+                        "left",
+                        "point"
+                    ],
+                    "images": [
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f448.svg",
+                            "id": "source"
+                        },
+                        {
+                            "url": "https://www.youtube.com/s/gaming/emoji/0f0cae22/emoji_u1f448.svg"
+                        }
+                    ],
+                    "is_custom_emoji": false
+                }
+            ],
+            "time_text": "47:42",
+            "timestamp_colour": "#00000080",
+            "body_background_colour": "#1de9b6ff",
+            "header_text_colour": "#000000ff",
+            "header_background_colour": "#00bfa5ff",
+            "body_text_colour": "#000000ff",
+            "author": {
+                "name": "Triggered smruti",
+                "images": [
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg",
+                        "id": "source"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg=s32-c-k-c0x00ffffff-no-rj",
+                        "width": 32,
+                        "height": 32,
+                        "id": "32x32"
+                    },
+                    {
+                        "url": "https://yt4.ggpht.com/WYQ108wbLtY0RVNBC4FwhvNj3CJNhXCjlLUqWo0JGpCySczSEQuT6I2e7Djd-OHjIqUrlHCctg=s64-c-k-c0x00ffffff-no-rj",
+                        "width": 64,
+                        "height": 64,
+                        "id": "64x64"
+                    }
+                ],
+                "id": "UCaDFYz6EMam-XWDf07Y07Qw",
+                "name_text_colour": "#0000008a"
+            },
+            "message_type": "ticker_paid_message_item"
+        }
+    ]
+}

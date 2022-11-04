@@ -63,28 +63,46 @@ def clip_finder():
         return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     video_link = video_data["link"]
     try:
-        chat = ChatDownloader().get_chat(video_id) # get chat
+        chat = ChatDownloader().get_chat(video_id, message_types=['all']) # get chat
     except errors.NoChatReplay:
         return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     chat_count = 0
     message_count = {}
+    different_type = {}
+    income_count = 0
+    new_member = 0
     for message in chat:
-        for word in key_word:
-            if ((word in message['message'].lower().split()) or (word in message['author']['name'].lower())):
-                link = "https://youtu.be/"+video_id+"?t="+str(int(message['time_in_seconds']))
-                image_link = message['author']['images'][1]['url']
-                chat = message['message']
-                name = message['author']['name']
-                string += '</br>' + f"<img src = \"{image_link}\"> {name} " "<a href=\"" + link + f"\"> "+ "."*100 + f"  {link} - </a> " + chat
-                names.append(name)
-                chats.append(chat)
-                images.append(image_link)
-                links.append(link)
-        chat_count += 1
-        try:
-            message_count[message['author']['name']] += 1
-        except KeyError:
-            message_count[message['author']['name']] = 1
+        if message["message_type"] in ["paid_message", "ticker_paid_message_item"]:
+            income_count += message["money"]["amount"]
+            continue
+        elif message["message_type"] == "membership_item":
+            new_member += 1
+            continue
+        elif message["message_type"] == "text_message":
+            for word in key_word:
+                if ((word in message['message'].lower().split()) or (word in message['author']['name'].lower())):
+                    link = "https://youtu.be/"+video_id+"?t="+str(int(message['time_in_seconds']))
+                    image_link = message['author']['images'][1]['url']
+                    chat = message['message']
+                    name = message['author']['name']
+                    string += '</br>' + f"<img src = \"{image_link}\"> {name} " "<a href=\"" + link + f"\"> "+ "."*100 + f"  {link} - </a> " + chat
+                    names.append(name)
+                    chats.append(chat)
+                    images.append(image_link)
+                    links.append(link)
+                try:
+                    message_count[message['author']['name']] += 1
+                except KeyError:
+                    message_count[message['author']['name']] = 1
+                chat_count += 1
+        else:
+            try:
+                different_type[message["message_type"]].append(message)
+            except KeyError:
+                different_type[message["message_type"]] = [message]
+            with open("different_type.json", "w") as f:
+                json.dump(different_type, f, indent=4)
+        
     message_count = sorted(message_count.items(), key=lambda x: x[1], reverse=True)[:5]
     top_chatter_count = []
     top_chatter_name = []
@@ -109,6 +127,8 @@ def clip_finder():
         top_chatter_name=top_chatter_name,
         top_chatter_count=top_chatter_count,
         chat_count = chat_count,
+        new_member = new_member,
+        income_count = income_count,
         result=True
     )
 
