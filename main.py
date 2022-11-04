@@ -72,12 +72,14 @@ def clip_finder():
     income_count = 0
     new_member = 0
     for message in chat:
-        if message["message_type"] in ["paid_message", "ticker_paid_message_item"]:
+        if message["message_type"] in ["paid_message", "paid_sticker"]:
             income_count += message["money"]["amount"]
             continue
-        elif message["message_type"] == "membership_item":
+        elif message["message_type"] in ["membership_item", "sponsorships_gift_redemption_announcement"]:
             new_member += 1
             continue
+        elif message["message_type"] in ["viewer_engagement_message", "ticker_paid_sticker_item", "ticker_sponsor_item", "ticker_paid_message_item", "sponsorships_gift_purchase_announcement"]:
+            continue # ignore these messagestypes
         elif message["message_type"] == "text_message":
             for word in key_word:
                 if ((word in message['message'].lower().split()) or (word in message['author']['name'].lower())):
@@ -96,6 +98,7 @@ def clip_finder():
                     message_count[message['author']['name']] = 1
                 chat_count += 1
         else:
+            print("Found something new message type", message["message_type"])
             try:
                 different_type[message["message_type"]].append(message)
             except KeyError:
