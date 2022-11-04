@@ -16,8 +16,10 @@ app = Flask(__name__)
 def clip_finder():
     # take input from a text box id = " input"
     if request.method == "GET":
-        return render_template("index.html")
-
+        return render_template(
+            "index.html",
+            result=False
+        )
 
     video_link =  request.form["video_link"]
     key_word =  request.form["keywords"].split(",")
@@ -52,7 +54,7 @@ def clip_finder():
     duration = datetime.timedelta(seconds=duration)
     duration = str(duration)
     description = video_data["description"]
-    thumbnail_link = video_data["thumbnails"][-1]["url"]
+    thumbnail_link = "https://i.ytimg.com/vi/Fudk3KU4e4k/maxresdefault.jpg?v=" + video_id
     if video_data["isLiveNow"]:
         return "Please wait till the stream get over to prevent issues."
     try:
@@ -106,7 +108,8 @@ def clip_finder():
         names=names,
         top_chatter_name=top_chatter_name,
         top_chatter_count=top_chatter_count,
-        chat_count = chat_count
+        chat_count = chat_count,
+        result=True
     )
 
 app.run(debug=False, host="0.0.0.0", port=8080)

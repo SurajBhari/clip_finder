@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<title>Clip Finder</title>
 		<style>
 			.styled-table {
@@ -56,12 +57,12 @@
                 white-space: pre-wrap;
                 font-size: xx-small;
 			}
-            .myimg{
-                width:32px;
-                height:32px;
-                object-fit:cover;
-                border-radius:50%;
-              }
+			.result{
+				{% if result == False %}
+				visibility: hidden;
+				{% endif %}
+			}
+
 		</style>
 	</head>
 	<body>
@@ -70,16 +71,16 @@
 			<form action="#" method="post">
                 <h1>Clip Finder</h1>
                 <h2>Enter a YouTube URL to find the exact time a specific word was said in chat</h2>
-				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" width="50%"></p>
+				<p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" ></p>
                 <h2> Enter Keyword(s) (seperate multiple by commas) </h2>
-				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma), Leave empty if you want all of that chats." name="keywords" width="50%"></p>
+				<p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma), Leave empty if you want all of that chats." name="keywords"></p>
 				<p><input type="submit" value="Sumbit"/></p>
 			</form>
 		</center>
 		{% endblock %}
 		<div class="result">
 			<center>
-				<table border="0" id="info-table", width="100%" class="styled-table">
+				<table border="0" id="info-table" class="styled-table">
 					
 						<td>
 							<center>
@@ -120,7 +121,7 @@
 				</table>
 			</center>
 			<center>
-			<table border="0" class="styled-table" width="100%">
+			<table border="0" class="styled-table">
 				<thead>
 					<tr>
 						<th>S. No</th>
@@ -133,7 +134,7 @@
 				<tr>
 				{% for i in range(images|length) %}
 					<center>
-						<tr width="100%">
+						<tr>
 							<td>
 								<center>{{i+1}}.</center>
 							</td>
@@ -158,9 +159,9 @@
 
 
 
-			<table border="0" class="styled-table" width="100%">
+			<table border="0" class="styled-table">
 				<thead>
-					<tr width="100%">
+					<tr>
 						<th>S. No</th>
 						<th>Name</th>
 						<th>Chat Count</th>
@@ -169,7 +170,7 @@
 				<tr>
 				{% for i in range(top_chatter_name|length) %}
 					<center>
-						<tr width="100%">
+						<tr>
 							<td>
 								<center>{{i+1}}.</center>
 							</td>
