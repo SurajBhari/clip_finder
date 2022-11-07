@@ -73,11 +73,13 @@ def clip_finder():
     description = video_data["description"]
     thumbnail_link = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
     video_link = video_data["link"]
-
+    print(listdir("previous_attempts"))
+    message_data = []
     if video_id + ".json" in listdir("previous_attempts"):
         with open("previous_attempts/" + video_id + ".json", "r") as f:
             data = json.load(f)
             cached = True
+        print("Already Cached")
     else:
         try:
             data = ChatDownloader().get_chat(
@@ -85,10 +87,10 @@ def clip_finder():
             )  # get chat
         except errors.NoChatReplay:
             return "Please wait till the stream get rendered properly from yotube side to prevent issues."
-        message_data = []
 
     for message in data:
-        message_data.append(message)
+        if not cached:
+            message_data.append(message)
 
         if message["message_type"] + ".json" not in known_types:
             known_types.append(message["message_type"] + ".json")
@@ -128,10 +130,23 @@ def clip_finder():
             continue  # ignore these messagestypes
 
         elif message["message_type"] == "text_message":
+            try:
+                message_content = message["message"].lower()
+            except KeyError:
+                continue # ignore messages without text
+            try:
+                username = message["author"]["name"]
+            except KeyError:
+                username = ""
+            
+            chat_count += 1
+            try:
+                message_count[username] += 1
+            except KeyError:
+                message_count[username] = 1
             for word in key_word:
-                print(message)
-                if (word in message["message"].lower()) or (
-                    word in message["author"]["name"].lower()
+                if (word in message_content) or (
+                    word in username.lower()
                 ):
                     link = (
                         "https://youtu.be/"
@@ -157,11 +172,8 @@ def clip_finder():
                     images.append(image_link)
                     links.append(link)
                     timestamps.append(timestamp)
-                try:
-                    message_count[message["author"]["name"]] += 1
-                except KeyError:
-                    message_count[message["author"]["name"]] = 1
-                chat_count += 1
+                continue
+
 
     if not cached:
         with open("previous_attempts/" + video_id + ".json", "w") as f:
