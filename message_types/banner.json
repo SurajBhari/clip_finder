@@ -1,0 +1,39 @@
+{
+    "time_in_seconds": -3043,
+    "action_type": "add_banner_to_live_chat",
+    "icon": "KEEP",
+    "message": "Giving away Rs 100 Paytm per 100 likes. More Likes = More Money",
+    "message_id": "CjkKGkNNMmo3SW1jbF9zQ0ZaWTFyUVlkWW5nREpBEhtDTW1odDhLYmxfc0NGZHlTVmdFZE1XVUhSUTA%3D",
+    "timestamp": 1667657438694453,
+    "time_text": "-50:43",
+    "author": {
+        "name": "ToasterRoaster",
+        "images": [
+            {
+                "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg",
+                "id": "source"
+            },
+            {
+                "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s32-c-k-c0x00ffffff-no-rj",
+                "width": 32,
+                "height": 32,
+                "id": "32x32"
+            },
+            {
+                "url": "https://yt4.ggpht.com/Ts38SH-dIV5lKzF08CxjllNDoaJtzdJ1r0ibtexh2A56Sv7fzGeTLMDyAlorE2FUQDcz_wdWwg=s64-c-k-c0x00ffffff-no-rj",
+                "width": 64,
+                "height": 64,
+                "id": "64x64"
+            }
+        ],
+        "badges": [
+            {
+                "title": "Owner",
+                "icon_name": "owner"
+            }
+        ],
+        "id": "UCIzzPhdRf8Olo3WjiexcZSw"
+    },
+    "header_message": "Pinned by ToasterRoaster",
+    "message_type": "banner"
+}
