@@ -4,3 +4,4 @@ scrapetube
 flask
 youtube-search-python
 yt-dlp
+currencyconverter

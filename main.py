@@ -10,9 +10,11 @@ from flask import Flask, redirect, url_for, render_template, request
 from os import listdir
 import json
 from urllib import parse
+from currency_converter import CurrencyConverter
+
 
 app = Flask(__name__)
-
+currency = CurrencyConverter()
 
 @app.route("/", methods=["POST", "GET"])
 def clip_finder():
@@ -100,7 +102,8 @@ def clip_finder():
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             superchat_users.append(message["author"]["name"])
             superchat_users_images.append(message["author"]["images"][-1]["url"])
-            superchat_ammounts.append(message["money"]["text"])
+            inr_ammount = currency.convert(message["money"]["amount"], message["money"]["currency"], "INR")
+            superchat_ammounts.append(inr_ammount)
             if message["message_type"] == "paid_sticker":
                 superchat_messages.append(message["sticker_images"][-2]["url"])
             else:
