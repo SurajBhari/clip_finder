@@ -6,7 +6,7 @@ import datetime
 from flask import Flask, render_template, request
 
 from flask import Flask, redirect, url_for, render_template, request
-
+from math import floor
 from os import listdir
 import json
 from urllib import parse
@@ -102,7 +102,7 @@ def clip_finder():
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             superchat_users.append(message["author"]["name"])
             superchat_users_images.append(message["author"]["images"][-1]["url"])
-            inr_ammount = currency.convert(message["money"]["amount"], message["money"]["currency"], "INR")
+            inr_ammount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
             superchat_ammounts.append(inr_ammount)
             if message["message_type"] == "paid_sticker":
                 superchat_messages.append(message["sticker_images"][-2]["url"])
