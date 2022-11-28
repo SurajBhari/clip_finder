@@ -103,7 +103,7 @@ def clip_finder():
             superchat_users.append(message["author"]["name"])
             superchat_users_images.append(message["author"]["images"][-1]["url"])
             inr_ammount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
-            superchat_ammounts.append(inr_ammount)
+            superchat_ammounts.append("\u20b9" + str(inr_ammount))
             if message["message_type"] == "paid_sticker":
                 superchat_messages.append(message["sticker_images"][-2]["url"])
             else:
