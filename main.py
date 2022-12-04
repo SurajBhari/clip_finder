@@ -3,7 +3,7 @@ from chat_downloader import ChatDownloader, errors
 from youtubesearchpython import Video
 from os import listdir
 import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 from flask import Flask, redirect, url_for, render_template, request
 from math import floor
@@ -16,12 +16,7 @@ from currency_converter import CurrencyConverter
 app = Flask(__name__)
 currency = CurrencyConverter()
 
-@app.route("/", methods=["POST", "GET"])
-def clip_finder():
-    # take input from a text box id = " input"
-    if request.method == "GET":
-        return render_template("index.html", result=False)
-
+def process(video_link, key_word):
     cached = False
     string = ""
     links = []
@@ -34,16 +29,13 @@ def clip_finder():
     new_members_m = []
     new_members_images = []
     superchat_users = []
-    superchat_ammounts = []
+    superchat_amounts = []
     superchat_messages = []
     superchat_users_images = []
     chat_count = 0
     message_count = {}
     known_types = listdir("message_types")
-    video_link = request.form["video_link"]
-    key_word = request.form["keywords"].split(",")
-    key_word = [_.lower().strip() for _ in key_word]
-
+    
     if not video_link:
         return "Please enter a video link to make this work... like https://www.youtube.com/watch?v=E1YVSxKXidc"
     if not key_word:
@@ -102,8 +94,8 @@ def clip_finder():
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             superchat_users.append(message["author"]["name"])
             superchat_users_images.append(message["author"]["images"][-1]["url"])
-            inr_ammount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
-            superchat_ammounts.append("\u20b9" + str(inr_ammount))
+            inr_amount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
+            superchat_amounts.append("\u20b9" + str(inr_amount))
             if message["message_type"] == "paid_sticker":
                 superchat_messages.append(message["sticker_images"][-2]["url"])
             else:
@@ -189,34 +181,80 @@ def clip_finder():
     for x, y in message_count:
         top_chatter_name.append(x)
         top_chatter_count.append(y)
+    
+    # construct the json to be sent to the frontend
+    data = {
+        "code": 200,
+        "meta": {
+            "title": title,
+            "duration": duration,
+            "description": description,
+            "thumbnail_link": thumbnail_link,
+            "video_link": video_link,
+            "embed_link": embed_link,
+            "video_direct_link": video_direct_link,
+            "income_count": "\u20b9" + str(income_count),
+            "message_count": chat_count,
+            "new_members_count": len(new_members)
+        },
+        "superchat": {},
+        "new_members": {},
+        "top_chatters": {},
+        "chats": {},
+    }
 
-    return render_template(
-        "index.html",
-        title=title,
-        duration=duration,
-        description=description,
-        video_link=video_link,
-        embed_link=embed_link,
-        thumbnail_link=thumbnail_link,
-        video_direct_link=video_direct_link,
-        links=links,
-        chats=chats,
-        images=images,
-        names=names,
-        timestamps=timestamps,
-        top_chatter_name=top_chatter_name,
-        top_chatter_count=top_chatter_count,
-        chat_count=chat_count,
-        new_members=new_members,
-        new_members_m=new_members_m,
-        new_members_images=new_members_images,
-        superchat_ammounts=superchat_ammounts,
-        superchat_users=superchat_users,
-        superchat_messages=superchat_messages,
-        superchat_users_images=superchat_users_images,
-        income_count=income_count,
-        result=True,
-    )
+    for x in range(len(superchat_users)):
+        data["superchat"][x] = {
+            "name": superchat_users[x],
+            "avatar": superchat_users_images[x],
+            "amount": superchat_amounts[x],
+            "message": superchat_messages[x],
+        }
 
+    for x in range(len(new_members)):
+        data["new_members"][x] = {
+            "name": new_members[x],
+            "avatar": new_members_images[x],
+            "message": new_members_m[x],
+        }
+    
+    for x in range(len(top_chatter_name)):
+        data["top_chatters"][x] = {
+            "name": top_chatter_name[x],
+            "count": top_chatter_count[x],
+        }
+    
+    for x in range(len(names)):
+        data["chats"][x] = {
+            "name": names[x],
+            "avatar": images[x],
+            "message": chats[x],
+            "link": links[x],
+            "timestamp": timestamps[x],
+        }
+    return data
+
+@app.route("/", methods=["POST", "GET"])
+def clip_finder():
+    # take input from a text box id = " input"
+    if request.method == "GET":
+        return render_template("index.html", result=False, data={"code":204})
+
+    video_link = request.form["video_link"]
+    key_word = request.form["keywords"].split(",")
+    key_word = [_.lower().strip() for _ in key_word]
+    return render_template("index.html" , data=process(video_link, key_word), result=True)
+
+@app.route("/api/<video_link>/<key_word>")
+def api(video_link, key_word):
+    key_word = key_word.split(",")
+    key_word = [_.lower().strip() for _ in key_word]
+    data = process("https://youtube.com/watch?v="+video_link, key_word)
+    try:
+        if data["code"] == 200:
+            return jsonify(data) 
+    except KeyError:
+        return jsonify({"code": 400, "message": "Invalid video link"})
+        
 
 app.run(debug=False, host="0.0.0.0", port=8080)
