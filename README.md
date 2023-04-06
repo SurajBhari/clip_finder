@@ -5,7 +5,7 @@ Basic self hosted website based application to find when a specific word or term
 Will not process anything that was not a livestream. or is not rendered fully by youtube yet.
 </br>
 
-I am currently hosting this myself [here](http://suraj1436.site:8080/). but it is easy to host yourself 
+I am currently hosting this myself [here](http://surajbhari.info:8080/). but it is easy to host yourself 
 </br>
 
 A video showcasing this would be up soon™. 
