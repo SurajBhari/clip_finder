@@ -16,6 +16,7 @@ from currency_converter import CurrencyConverter
 app = Flask(__name__)
 currency = CurrencyConverter()
 
+
 def process(video_link, key_word):
     cached = False
     string = ""
@@ -35,7 +36,7 @@ def process(video_link, key_word):
     chat_count = 0
     message_count = {}
     known_types = listdir("message_types")
-    
+
     if not video_link:
         return "Please enter a video link to make this work... like https://www.youtube.com/watch?v=E1YVSxKXidc"
     if not key_word:
@@ -94,7 +95,11 @@ def process(video_link, key_word):
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             superchat_users.append(message["author"]["name"])
             superchat_users_images.append(message["author"]["images"][-1]["url"])
-            inr_amount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
+            inr_amount = floor(
+                currency.convert(
+                    message["money"]["amount"], message["money"]["currency"], "INR"
+                )
+            )
             superchat_amounts.append("\u20b9" + str(inr_amount))
             if message["message_type"] == "paid_sticker":
                 superchat_messages.append(message["sticker_images"][-2]["url"])
@@ -128,21 +133,19 @@ def process(video_link, key_word):
             try:
                 message_content = message["message"].lower()
             except KeyError:
-                continue # ignore messages without text
+                continue  # ignore messages without text
             try:
                 username = message["author"]["name"]
             except KeyError:
                 username = ""
-            
+
             chat_count += 1
             try:
                 message_count[username] += 1
             except KeyError:
                 message_count[username] = 1
             for word in key_word:
-                if (word in message_content) or (
-                    word in username.lower()
-                ):
+                if (word in message_content) or (word in username.lower()):
                     link = (
                         "https://youtu.be/"
                         + video_id
@@ -169,7 +172,6 @@ def process(video_link, key_word):
                     timestamps.append(timestamp)
                 continue
 
-
     if not cached:
         with open("previous_attempts/" + video_id + ".json", "w") as f:
             json.dump(message_data, f, indent=4)
@@ -181,7 +183,7 @@ def process(video_link, key_word):
     for x, y in message_count:
         top_chatter_name.append(x)
         top_chatter_count.append(y)
-    
+
     # construct the json to be sent to the frontend
     data = {
         "code": 200,
@@ -195,7 +197,7 @@ def process(video_link, key_word):
             "video_direct_link": video_direct_link,
             "income_count": "\u20b9" + str(income_count),
             "message_count": chat_count,
-            "new_members_count": len(new_members)
+            "new_members_count": len(new_members),
         },
         "superchat": {},
         "new_members": {},
@@ -217,13 +219,13 @@ def process(video_link, key_word):
             "avatar": new_members_images[x],
             "message": new_members_m[x],
         }
-    
+
     for x in range(len(top_chatter_name)):
         data["top_chatters"][x] = {
             "name": top_chatter_name[x],
             "count": top_chatter_count[x],
         }
-    
+
     for x in range(len(names)):
         data["chats"][x] = {
             "name": names[x],
@@ -234,27 +236,31 @@ def process(video_link, key_word):
         }
     return data
 
+
 @app.route("/", methods=["POST", "GET"])
 def clip_finder():
     # take input from a text box id = " input"
     if request.method == "GET":
-        return render_template("index.html", result=False, data={"code":204})
+        return render_template("index.html", result=False, data={"code": 204})
 
     video_link = request.form["video_link"]
     key_word = request.form["keywords"].split(",")
     key_word = [_.lower().strip() for _ in key_word]
-    return render_template("index.html" , data=process(video_link, key_word), result=True)
+    return render_template(
+        "index.html", data=process(video_link, key_word), result=True
+    )
+
 
 @app.route("/api/<video_link>/<key_word>")
 def api(video_link, key_word):
     key_word = key_word.split(",")
     key_word = [_.lower().strip() for _ in key_word]
-    data = process("https://youtube.com/watch?v="+video_link, key_word)
+    data = process("https://youtube.com/watch?v=" + video_link, key_word)
     try:
         if data["code"] == 200:
-            return jsonify(data) 
+            return jsonify(data)
     except KeyError:
         return jsonify({"code": 400, "message": "Invalid video link"})
-        
+
 
 app.run(debug=False, host="0.0.0.0", port=8080)
