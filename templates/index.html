@@ -82,7 +82,13 @@
 				background-color: #4CAF50;
 				color: white;
 			}
-
+			
+			.error{
+				visibility: hidden;
+				{% if error == True %}
+				visibility: visible;
+				{% endif %}
+			}
 			.result{
 				{% if result == False %}
 				visibility: hidden;
@@ -138,7 +144,16 @@
 		</div>
 		</center>
 		{% endblock %}
-
+		{% block error%}
+		{% if error == True %}
+			<div class="error">
+				<center>
+					<h1>ERROR</h1>
+					<h2> {{ data }} </h2>
+				</center>
+			</div>
+		{% endif %}
+		{% endblock %}
 
 		{% block result %}
 		{% if result == True %}
