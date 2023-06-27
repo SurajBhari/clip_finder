@@ -3,7 +3,7 @@ import yt_dlp
 from os import listdir
 import datetime
 from flask import Flask, render_template, request, jsonify
-
+from pathlib import Path
 from flask import Flask, redirect, url_for, render_template, request
 from math import floor
 from os import listdir
@@ -16,7 +16,7 @@ app = Flask(__name__)
 currency = CurrencyConverter()
 
 
-def process(video_link, key_word):
+def process(video_link, key_word, cookies):
     cached = False
     string = ""
     links = []
@@ -48,19 +48,22 @@ def process(video_link, key_word):
         return "Please pass a proper youtube video link... like https://www.youtube.com/watch?v=kHGP5ABZfqM . Sharing links are not allowed as of now."
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
-    try:
-        # get metadata and use highest format and skip-download True
-        video_data = yt_dlp.YoutubeDL(
-            {
+    params = {
                 "skip_download": True,
                 "format": "best",
-                "quiet": True,
-                "no_warnings": True,
-                "ignoreerrors": True,
             }
-        ).extract_info(video_id, download=False)
+    if cookies:        
+        # for some reason we get 2 \n after every line. so we get rid of one. i have tried replace \n\n with \n. but that doesn't work.
+        with open("temp_cookies.txt", "w+") as f:
+            for line in cookies.split("\n"):
+                f.write(line)
+        params["cookiefile"] = str(Path(__file__).parent / "temp_cookies.txt")
+    try:
+        # get metadata and use highest format and skip-download True    
+        video_data = yt_dlp.YoutubeDL(params).extract_info(video_id, download=False)
     except Exception as e:
         return str(e)
+    
     if not video_data["was_live"]:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
     if video_data["is_live"]:
@@ -85,12 +88,15 @@ def process(video_link, key_word):
         print("Already Cached")
     else:
         try:
-            data = ChatDownloader().get_chat(
+            data = ChatDownloader(cookies="temp_cookies.txt").get_chat(
                 video_id, message_types=["all"]
             )  # get chat
         except errors.NoChatReplay:
             return "Please wait till the stream get rendered properly from yotube side to prevent issues."
-
+    
+    with open("temp_cookies.txt", "w+") as f:
+        f.write("")
+    # we remove temp_cookies.txt as we don't need it anymore.
     for message in data:
         if not cached:
             message_data.append(message)
@@ -256,7 +262,11 @@ def clip_finder():
     video_link = request.form["video_link"]
     key_word = request.form["keywords"].split(",")
     key_word = [_.lower().strip() for _ in key_word]
-    data = process(video_link, key_word)
+    try:
+        cookies = request.form["cookies"]
+    except KeyError:
+        cookies = ""
+    data = process(video_link, key_word, cookies)
     if type(data) == dict:
         return render_template("index.html", result=True, data=data, error=False)
     else:
@@ -276,4 +286,4 @@ def api(video_link, key_word):
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=8080)
+    app.run(debug=True, host="0.0.0.0", port=8080)
