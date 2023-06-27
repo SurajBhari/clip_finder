@@ -13,3 +13,9 @@ A video showcasing this would be up soon™.
 ```pip install -r requirements.txt```</br>
 
 ```python main.py```
+
+# Using Cookies
+ - Install [Get cookies](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
+ - Go to [Youtube](https://www.youtube.com/) from the account you have access to the chat of the livestream
+ - Click on the extension and press Copy
+ - Paste it in the text box and press submit
