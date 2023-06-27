@@ -10,9 +10,15 @@
 <body>
     {% block content %}
     <form action="#" method="post">
-        <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link"></p>
-        <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma)" name="keywords"></p>
-        <p><input type="submit" value="Sumbit"/></p>
+        <h1>Clip Finder</h1>
+        <h2>Enter a YouTube URL to find the exact time a specific word was said in chat</h2>
+        <p><input type="text" id="clip" placeholder="LiveStream Link" name="video_link" ></p>
+        <h2> Enter Keyword(s) (seperate multiple by commas) </h2>
+        <p><input type="text" id="keyword" placeholder="Add a keyword (seperated by comma), Leave empty if you want all of that chats." name="keywords"></p>
+        <h3> (Optional for Members only streams/ Privated streams) Read <a href="https://github.com/AG4lyf/clip_finder#using-cookies" >Using Cookies</a> to find out how to get your cookies and use them. </h2>
+        <h4> I don't store any cookies provided by user. </h1>
+        <p><textarea rows="10" cols="30" id="cookies" placeholder="Netscape HTTP Cookie (Optional)" name="cookies"></textarea>
+        <p><input type="submit" value="Sumbit" onclick="loading();" class="button"/></p>
     </form>
     {% endblock %}
     <table>
