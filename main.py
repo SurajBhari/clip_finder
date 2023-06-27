@@ -15,6 +15,7 @@ from currency_converter import CurrencyConverter
 app = Flask(__name__)
 currency = CurrencyConverter()
 
+
 def process(video_link, key_word):
     cached = False
     string = ""
@@ -34,9 +35,9 @@ def process(video_link, key_word):
     chat_count = 0
     message_count = {}
     known_types = listdir("message_types")
-    
+
     if not video_link:
-        return "Please enter a video link to make this work... like https://www.youtube.com/watch?v=E1YVSxKXidc"
+        return "Please enter a video link to make this work... like https://www.youtube.com/watch?v=kHGP5ABZfqM"
     if not key_word:
         return "Please enter Keyword(s) to make this work..."
 
@@ -44,9 +45,9 @@ def process(video_link, key_word):
     try:
         video_id = parse.parse_qs(parsed_link.query)["v"][0]
     except KeyError:
-        return "Please pass a proper youtube video link... like https://www.youtube.com/watch?v=E1YVSxKXidc . Sharing links are not allowed till now."
+        return "Please pass a proper youtube video link... like https://www.youtube.com/watch?v=kHGP5ABZfqM . Sharing links are not allowed as of now."
     if not video_id:
-        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
+        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
     try:
         video_data = yt_dlp.YoutubeDL({"skip_download": True}).extract_info(
             video_id, download=False
@@ -54,7 +55,7 @@ def process(video_link, key_word):
     except Exception as e:
         return str(e)
     if not video_data["was_live"]:
-        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=E1YVSxKXidc"
+        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
     if video_data["is_live"]:
         return "Please wait till the stream get over to prevent issues."
     try:
@@ -64,9 +65,7 @@ def process(video_link, key_word):
 
     embed_link = "https://www.youtube.com/embed/" + video_id
     title = video_data["title"]
-    duration = str(
-        datetime.timedelta(seconds=int(video_data["duration"]))
-    )
+    duration = str(datetime.timedelta(seconds=int(video_data["duration"])))
     description = video_data["description"]
     thumbnail_link = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
     video_link = f"https://www.youtube.com/watch?v={video_id}"
@@ -96,7 +95,11 @@ def process(video_link, key_word):
 
         if message["message_type"] in ["paid_message", "paid_sticker"]:
             try:
-                inr_amount = floor(currency.convert(message["money"]["amount"], message["money"]["currency"], "INR"))
+                inr_amount = floor(
+                    currency.convert(
+                        message["money"]["amount"], message["money"]["currency"], "INR"
+                    )
+                )
             except ValueError:
                 continue
             superchat_users.append(message["author"]["name"])
@@ -134,21 +137,19 @@ def process(video_link, key_word):
             try:
                 message_content = message["message"].lower()
             except KeyError:
-                continue # ignore messages without text
+                continue  # ignore messages without text
             try:
                 username = message["author"]["name"]
             except KeyError:
                 username = ""
-            
+
             chat_count += 1
             try:
                 message_count[username] += 1
             except KeyError:
                 message_count[username] = 1
             for word in key_word:
-                if (word in message_content) or (
-                    word in username.lower()
-                ):
+                if (word in message_content) or (word in username.lower()):
                     link = (
                         "https://youtu.be/"
                         + video_id
@@ -175,7 +176,6 @@ def process(video_link, key_word):
                     timestamps.append(timestamp)
                 continue
 
-
     if not cached:
         with open("previous_attempts/" + video_id + ".json", "w") as f:
             json.dump(message_data, f, indent=4)
@@ -187,7 +187,6 @@ def process(video_link, key_word):
     for x, y in message_count:
         top_chatter_name.append(x)
         top_chatter_count.append(y)
-    print
     # construct the json to be sent to the frontend
     data = {
         "code": 200,
@@ -201,7 +200,7 @@ def process(video_link, key_word):
             "video_direct_link": video_direct_link,
             "income_count": "\u20b9" + str(income_count),
             "message_count": chat_count,
-            "new_members_count": len(new_members)
+            "new_members_count": len(new_members),
         },
         "superchat": {},
         "new_members": {},
@@ -223,13 +222,13 @@ def process(video_link, key_word):
             "avatar": new_members_images[x],
             "message": new_members_m[x],
         }
-    
+
     for x in range(len(top_chatter_name)):
         data["top_chatters"][x] = {
             "name": top_chatter_name[x],
             "count": top_chatter_count[x],
         }
-    
+
     for x in range(len(names)):
         data["chats"][x] = {
             "name": names[x],
@@ -238,14 +237,14 @@ def process(video_link, key_word):
             "link": links[x],
             "timestamp": timestamps[x],
         }
-    #print(data)
     return data
+
 
 @app.route("/", methods=["POST", "GET"])
 def clip_finder():
     # take input from a text box id = " input"
     if request.method == "GET":
-        return render_template("index.html", result=False, data={"code":204})
+        return render_template("index.html", result=False, data={"code": 204})
 
     video_link = request.form["video_link"]
     key_word = request.form["keywords"].split(",")
@@ -256,14 +255,15 @@ def clip_finder():
     else:
         return render_template("index.html", result=False, data=data, error=True)
 
+
 @app.route("/api/<video_link>/<key_word>")
 def api(video_link, key_word):
     key_word = key_word.split(",")
     key_word = [_.lower().strip() for _ in key_word]
-    data = process("https://youtube.com/watch?v="+video_link, key_word)
+    data = process("https://youtube.com/watch?v=" + video_link, key_word)
     try:
         if data["code"] == 200:
-            return jsonify(data) 
+            return jsonify(data)
     except KeyError:
         return jsonify({"code": 400, "message": "Invalid video link"})
 
