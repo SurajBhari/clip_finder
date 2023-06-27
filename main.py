@@ -49,9 +49,16 @@ def process(video_link, key_word):
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
     try:
-        video_data = yt_dlp.YoutubeDL({"skip_download": True}).extract_info(
-            video_id, download=False
-        )
+        # get metadata and use highest format and skip-download True
+        video_data = yt_dlp.YoutubeDL(
+            {
+                "skip_download": True,
+                "format": "best",
+                "quiet": True,
+                "no_warnings": True,
+                "ignoreerrors": True,
+            }
+        ).extract_info(video_id, download=False)
     except Exception as e:
         return str(e)
     if not video_data["was_live"]:
@@ -59,16 +66,16 @@ def process(video_link, key_word):
     if video_data["is_live"]:
         return "Please wait till the stream get over to prevent issues."
     try:
-        video_direct_link = video_data["subtitles"]["live_chat"][0]["url"]
+        video_data["subtitles"]["live_chat"][0]["url"]
     except KeyError:
         return "Please wait till the stream get rendered properly from yotube side to prevent issues."
-
+    video_direct_link = video_data["url"]
     embed_link = "https://www.youtube.com/embed/" + video_id
     title = video_data["title"]
     duration = str(datetime.timedelta(seconds=int(video_data["duration"])))
     description = video_data["description"]
     thumbnail_link = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
-    video_link = f"https://www.youtube.com/watch?v={video_id}"
+    video_link = video_data["webpage_url"]
     print(listdir("previous_attempts"))
     message_data = []
     if video_id + ".json" in listdir("previous_attempts"):
