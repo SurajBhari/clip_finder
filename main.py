@@ -88,9 +88,14 @@ def process(video_link, key_word, cookies):
         print("Already Cached")
     else:
         try:
-            data = ChatDownloader(cookies="temp_cookies.txt").get_chat(
-                video_id, message_types=["all"]
-            )  # get chat
+            if cookies:
+                data = ChatDownloader(cookies="temp_cookies.txt").get_chat(
+                    video_id, message_types=["all"]
+                )  # get chat
+            else:
+                data = ChatDownloader().get_chat(
+                    video_id, message_types=["all"]
+                )
         except errors.NoChatReplay:
             return "Please wait till the stream get rendered properly from yotube side to prevent issues."
     
