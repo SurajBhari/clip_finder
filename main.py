@@ -21,7 +21,16 @@ def before_request():
         url = request.url.replace('http://', 'https://', 1)
         code = 301
         return redirect(url, code=code)
-    
+
+def get_video_id(video_link):
+    x = parse.urlparse(video_link)
+    to_return = ""
+    if x.path =="/watch":
+        to_return = x.query.replace("v=","")
+    if "/live/" in x.path:
+        to_return = x.path.replace("/live/","")
+    return to_return.split("&")[0]   
+
 def process(video_link, key_word, cookies):
     cached = False
     string = ""
@@ -47,11 +56,7 @@ def process(video_link, key_word, cookies):
     if not key_word:
         return "Please enter Keyword(s) to make this work..."
 
-    parsed_link = parse.urlparse(video_link)
-    try:
-        video_id = parse.parse_qs(parsed_link.query)["v"][0]
-    except KeyError:
-        return "Please pass a proper youtube video link... like https://www.youtube.com/watch?v=kHGP5ABZfqM . Sharing links are not allowed as of now."
+    video_id = get_video_id(video_link)
     if not video_id:
         return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
     params = {
@@ -71,7 +76,7 @@ def process(video_link, key_word, cookies):
         return str(e)
     
     if not video_data["was_live"]:
-        return "Please Parse a actual livestream link like  https://www.youtube.com/watch?v=kHGP5ABZfqM"
+        return "Provided link is not a livestream link."
     if video_data["is_live"]:
         return "Please wait till the stream get over to prevent issues."
     try:
