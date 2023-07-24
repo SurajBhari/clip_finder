@@ -15,7 +15,13 @@ from currency_converter import CurrencyConverter
 app = Flask(__name__)
 currency = CurrencyConverter()
 
-
+@app.before_request
+def before_request():
+    if not request.is_secure:
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
+    
 def process(video_link, key_word, cookies):
     cached = False
     string = ""
@@ -291,4 +297,4 @@ def api(video_link, key_word):
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=8080)
+    app.run(ssl_context=('certificate.crt', 'private.key'), host='0.0.0.0', port=8080)
