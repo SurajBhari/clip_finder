@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, jsonify
 from pathlib import Path
 from flask import Flask, redirect, url_for, render_template, request
 from math import floor
-from os import listdir
+from os import listdir, path
 import json
 from urllib import parse
 from currency_converter import CurrencyConverter
@@ -77,8 +77,7 @@ def process(video_link, key_word, cookies):
     
     if not video_data["was_live"]:
         return "Provided link is not a livestream link."
-    if video_data["is_live"]:
-        return "Please wait till the stream get over to prevent issues."
+    
     try:
         video_data["subtitles"]["live_chat"][0]["url"]
     except KeyError:
@@ -206,8 +205,9 @@ def process(video_link, key_word, cookies):
                 continue
 
     if not cached:
-        with open("previous_attempts/" + video_id + ".json", "w") as f:
-            json.dump(message_data, f, indent=4)
+        if not video_data["is_live"]:
+            with open("previous_attempts/" + video_id + ".json", "w") as f:
+                json.dump(message_data, f, indent=4)
 
     message_count = sorted(message_count.items(), key=lambda x: x[1], reverse=True)[:5]
     top_chatter_count = []
@@ -302,4 +302,4 @@ def api(video_link, key_word):
 
 
 if __name__ == "__main__":
-    app.run(ssl_context=('certificate.crt', 'private.key'), host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=80, debug=True)
